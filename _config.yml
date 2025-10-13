@@ -25,9 +25,9 @@ title: The Vicksburg Daily Times
 tagline: Reconstruction Era Newspaper from Vicksburg, Mississippi
 # description appears in meta tags and other locations
 # this description might appear in search result lists, keep around 160 characters max
-description: "Digital collection of the Vicksburg Daily Times, an 1860s Reconstruction Era newspaper from Vicksburg, Mississippi, courtesy of the Briscoe American History Center"
+description: "Digital collection of the Vicksburg Daily Times, a Reconstruction Era newspaper from Vicksburg, Mississippi, February - April 1867, courtesy of the Briscoe American History Center"
 # creator of the digital collection, to appear in meta tags; we typically use our GitHub usernames but feel free to just use your name
-author: Digital Libraries Class
+author: Lauren Hollister, Lucie Lefler, Lucas McGill, Gabe Mello, and Vivian Myers
 
 ##########
 # COLLECTION SETTINGS
@@ -40,8 +40,8 @@ metadata: VDT_metadata
 # Site/Organization Branding 
 #   Uncomment these and enter information for your organization (replacing the CDIL links and name below) if you'd like to brand your site with a logo
 #
-# organization-name: "Center for Digital Inquiry and Learning (CDIL)"
-# organization-link: https://cdil.lib.uidaho.edu/
+# organization-name: "University of Texas at Austin School of Information"
+# organization-link: https://ischool.utexas.edu/
 # organization-logo-banner: https://cdil.lib.uidaho.edu/storying-extinction/assets/img/cdil.png
 # organization-logo-nav: https://cdil.lib.uidaho.edu/assets/img/logo.png
 
