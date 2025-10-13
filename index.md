@@ -1,5 +1,5 @@
 ---
 layout: home-infographic
-title: Home
+title: The Vicksburg Daily Times
 ---
 

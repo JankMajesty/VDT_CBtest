@@ -10,18 +10,20 @@ credits: true
 
 {% include feature/jumbotron.html objectid="https://cdil.lib.uidaho.edu/images/palouse_sm.jpg" %}
 
-{% include feature/nav-menu.html sections="About the Collection;About the About Page" %}
+{% include feature/nav-menu.html sections="About the Collection;Source Materials;Historical Context;About This Project" %}
 
 ## About the Collection
 
-This site is generated using [CollectionBuilder-GH](https://collectionbuilding.github.io/gh/), a project to create a free and simple digital collection using [GitHub Pages](https://pages.github.com/) from: 
+The Vicksburg Daily Times was a newspaper published in Vicksburg, Mississippi during the Reconstruction Era following the American Civil War. This digital collection provides access to newspaper pages from the 1860s, documenting a pivotal period in American and Mississippi history.
 
-- a CSV of collection metadata
-- a folder of JPG images or PDF documents
+### Source Materials
 
-The template repository features four objects from the University of Idaho Library's [Digital Collections](https://www.lib.uidaho.edu/digital). 
+These digitized newspaper images are courtesy of the Briscoe American History Center at the University of Texas at Austin. The Briscoe Center is home to extensive collections documenting Texas and U.S. history, including significant holdings of historical newspapers and publications.
 
-For full details of creating your own collection site, visit [CollectionBuilder Documentation](https://collectionbuilder.github.io/cb-docs/)!
+### Historical Context
 
-<!-- IMPORTANT!!! DELETE this comment and the include below when you are finished editing this page for your collection. The include below introduces about page features. They will show up on your collection's about page until you delete it.  -->
-{% include cb/about_the_about.md %} 
+Published during Reconstruction, the Vicksburg Daily Times provides a window into the political, social, and economic conditions of post-Civil War Mississippi. Vicksburg, having been the site of a crucial Civil War siege in 1863, was a significant location during this transformative period in American history.
+
+### About This Project
+
+This digital collection was created as part of a Digital Libraries class project, demonstrating the process of digitization, metadata creation, and digital exhibit development. The site is built using [CollectionBuilder-GH](https://collectionbuilder.github.io/gh/), an open-source framework for creating digital collection exhibits. 
