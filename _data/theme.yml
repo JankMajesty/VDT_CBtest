@@ -39,8 +39,8 @@ locations-stopwords: # set of subjects separated by ; that will be removed from 
 #
 # see _data/map-config.csv for field display options
 auto-center-map: true # have the map auto fit all features into its view
-latitude: 46.727485 # to manually center map if not using auto-center-map option
-longitude: -117.014185 # to manually center map if not using auto-center-map option
+latitude: 46.32.3529047779506 # to manually center map if not using auto-center-map option
+longitude: -90.87749822336589 # to manually center map if not using auto-center-map option
 zoom-level: 5 # zoom level for map if not using auto-center-map option
 map-base: Esri_WorldStreetMap # set default base map, choose from: Esri_WorldStreetMap, Esri_NatGeoWorldMap, Esri_WorldImagery, OpenStreetMap_Mapnik
 map-search: true # true/false, not suggested with large collections
