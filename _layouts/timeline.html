@@ -14,6 +14,10 @@ custom-foot: js/timeline-js.html
 {% endif %}
 {%- assign items = items | where_exp: 'item','item[field]' | sort: field -%}
 {%- assign raw-dates = items | map: field | compact | uniq -%}
+{%- comment -%}Use full dates (yyyy-mm-dd) instead of just years for granular timeline{%- endcomment -%}
+{%- capture clean-dates -%}{% for date in raw-dates %}{{ date | strip }}{% unless forloop.last %};{% endunless %}{%- endfor -%}{%- endcapture -%}
+{%- assign uniqueDates = clean-dates | replace: ";;",";" | split: ";" | compact | uniq | sort -%}
+{%- comment -%}Also extract years for navigation{%- endcomment -%}
 {%- capture clean-years -%}{% for date in raw-dates %}{% if date contains "-" %}{{ date | strip | split: "-" | first }}{% elsif date contains "/" %}{{ date | strip | split: "/" | last }}{% else %}{{ date | strip }}{% endif %}{% unless forloop.last %};{% endunless %}{%- endfor -%}{%- endcapture -%}
 {%- assign uniqueYears = clean-years | replace: ";;",";" | split: ";" | compact | uniq | sort -%}
 {%- if site.data.theme.year-navigation -%}
@@ -27,30 +31,30 @@ custom-foot: js/timeline-js.html
 {%- if navYears -%}
 <div class="dropdown float-end" id="year-nav">
     <button class="btn btn-primary dropdown-toggle" type="button" id="yearButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Year
+        Jump to Date
     </button>
     <div class="dropdown-menu" aria-labelledby="yearButton">
-        {% for y in navYears %}
-        <a class="dropdown-item" href="#y{{ y }}">{{ y }}</a>{% endfor %}
+        {% for dateItem in uniqueDates %}
+        <a class="dropdown-item" href="#d{{ dateItem | replace: '-', '' }}">{{ dateItem | date: "%B %-d, %Y" }}</a>{% endfor %}
     </div>
 </div>
 {%- endif -%}
 
 {{ content }}
 
-<h3><a href="#y{{ uniqueYears | first }}">{{ uniqueYears | first }}</a> to <a href="#y{{ uniqueYears | last }}">{{ uniqueYears | last }}</a></h3>
+<h3><a href="#d{{ uniqueDates | first | replace: '-', '' }}">{{ uniqueDates | first | date: "%B %-d, %Y" }}</a> to <a href="#d{{ uniqueDates | last | replace: '-', '' }}">{{ uniqueDates | last | date: "%B %-d, %Y" }}</a></h3>
 
 <table id="timeline" class="table table-striped">
     <tbody>
-        {% for year in uniqueYears %}
-        <tr id="y{{ year }}">
+        {% for dateItem in uniqueDates %}
+        <tr id="d{{ dateItem | replace: '-', '' }}">
             <th>
-                <h3>{{ year }}</h3>
+                <h3>{{ dateItem | date: "%B %-d, %Y" }}</h3>
             </th>
             <td>
                 <div class="row">
-                    {%- assign inYear = items | where_exp: 'item', 'item[field] contains year' -%}
-                    {% for item in inYear %}
+                    {%- assign onDate = items | where_exp: 'item', 'item[field] == dateItem' -%}
+                    {% for item in onDate %}
                     <div class="col-lg-4 col-md-6">
                         <a href="{% if item.parentid == nil %}{{ '/item.html' | relative_url | append: '?id=' | append: item.objectid }}{% elsif item.parentid %}{{ '/item.html' | relative_url | append: '?id=' | append: item.parentid | relative_url }}#{{ item.objectid }}{% endif %}" >
                             {% if item.format contains 'image' or item.youtubeid %}
