@@ -1,4 +1,6 @@
 field,display_name,browse_link,external_link
+objectid,Object ID,
+parentid,Parent ID,
 title,Title,
 creator,Creator,
 date,Date Created,
@@ -11,5 +13,7 @@ source,Source
 identifier,Source Identifier,,
 type,Type,
 format,Format,
+filename,Filename,
+language,Language,
 rights,Rights,
 rightsstatement,Rights Statement,,true
