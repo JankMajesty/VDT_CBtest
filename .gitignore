@@ -52,3 +52,7 @@ yarn-error.log*
 
 # Serena
 .serena/
+
+# Claude
+.claude/
+Claude.md
