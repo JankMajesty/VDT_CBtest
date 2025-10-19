@@ -8,7 +8,7 @@ credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
 
-{% include feature/jumbotron.html objectid="/assets/img/theGeorgetownElection.jpg" alt="1867 Harper's Weekly political cartoon by Thomas Nast, depicting an African-American man casting his ballot during an election as Andrew Johnson and others look on angrily." padding="8em" %}
+{% include feature/jumbotron.html objectid="/assets/img/theGeorgetownElection.jpg" alt="1867 Harper's Weekly political cartoon by Thomas Nast, depicting an African-American man casting his ballot during an election as Andrew Johnson and others look on angrily." padding="8em" caption='"The Georgetown Election--The Negro at the Ballot-Box", Thomas Nast, Harper\'s Weekly, March 16, 1867, Massachusetts Historical Society.' %}
 
 {% include feature/nav-menu.html sections="About the Collection;Source Materials;Historical Context;Thematic Organization;About This Project" %}
 

@@ -12,6 +12,7 @@
     - "text" = paragraph text below heading. By default this will be the site tagline. Give the value false for no text.
     - "padding" = additional padding added to the feature to increase size. Give value in em or px, e.g. "5em".
     - "heading_level" = customize the level of the heading if necessary for accessibility, choose "h1", "h2", "h3", etc (optional, default "h2")
+    - "caption" = optional caption text to display below the jumbotron (e.g., image citation)
 
     Note: if using a YouTube item and an error image appears, the video may not have a "maxresdefault" image available. Replace "maxresdefault.jpg" in the code below with "hqdefault.jpg"
 
@@ -83,3 +84,6 @@ html[data-darkreader-inline-bgcolor] #{{ jumbo_div_id }} {
         {% endunless %}
     </div>
 </div>
+{% if include.caption %}
+<p class="text-center text-muted small mt-2 mb-3"><em>{{ include.caption }}</em></p>
+{% endif %}
