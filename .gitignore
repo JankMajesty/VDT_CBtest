@@ -56,3 +56,9 @@ yarn-error.log*
 # Claude
 .claude/
 Claude.md
+
+# Ruby scripts
+*.rb
+
+# cursor history
+cursor_debugging_ocr_transcripts_displa.md
