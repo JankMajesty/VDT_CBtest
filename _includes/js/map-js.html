@@ -139,8 +139,8 @@
         }    
         /* create popup content */
         var popupTemplate = '<h2 class="h4"><a class="text-dark" href="' + itemHref + '">' +
-            feature.properties.title + '</a></h2><div class="text-center"><a href="' + itemHref + 
-            '" ><img class="map-thumb img-thumb" src="' +  thumbSrc + '" alt="item thumbnail"></a></div><p>';
+            feature.properties.title + '</a></h2><div class="text-center"><a href="' + itemHref +
+            '" ><img class="map-thumb img-thumb" src="' +  thumbSrc + '" alt="' + feature.properties.title + '"></a></div><p>';
         /* add metadata fields */
         {% for f in fields %}{% if f.display_name %}
         if (feature.properties[{{ f.field | jsonify }}]) {

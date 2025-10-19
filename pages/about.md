@@ -28,6 +28,12 @@ Published during Reconstruction, the Vicksburg Daily Times provides a window int
 
 This collection is organized around three key themes of Reconstruction: the Military Reconstruction Act of 1867, African American Suffrage, and Southern Lost Cause Mentality. Visit our [Themes page]({{ '/themes.html' | relative_url }}) to explore scholarly analysis and browse newspapers by theme.
 
+### OCR and AI Tools
+
+OCR tools (ABBYY FineReader) were used to generate text from the historic newspaper images. OCR-generated text of historic newspapers is never 100% accurate due to the quality of the digitized image and the technology used.
+
+AI tools (Claude Code Sonnet 4.5 and Haiku 4.5, Cursor, OpenAI Codex, GPT-4) were used in the construction of this website. There was a human-in-the-loop verifying the integrity of outputs at every step of the process.
+
 ### About This Project
 
 This digital collection was created as part of a Digital Libraries class project, demonstrating the process of digitization, metadata creation, and digital exhibit development. The site is built using [CollectionBuilder-GH](https://collectionbuilder.github.io/gh/), an open-source framework for creating digital collection exhibits. 
