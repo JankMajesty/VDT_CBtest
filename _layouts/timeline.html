@@ -12,7 +12,8 @@ custom-foot: js/timeline-js.html
 {% else %}
 {%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid' | where_exp: 'item','item.parentid == nil' -%}
 {% endif %}
-{%- assign items = items | where_exp: 'item','item[field]' | sort: field -%}
+{%- comment -%}Filter to only show compound objects{%- endcomment -%}
+{%- assign items = items | where_exp: 'item','item.format contains "compound"' | where_exp: 'item','item[field]' | sort: field -%}
 {%- assign raw-dates = items | map: field | compact | uniq -%}
 {%- comment -%}Use full dates (yyyy-mm-dd) instead of just years for granular timeline{%- endcomment -%}
 {%- capture clean-dates -%}{% for date in raw-dates %}{{ date | strip }}{% unless forloop.last %};{% endunless %}{%- endfor -%}{%- endcapture -%}
@@ -57,7 +58,7 @@ custom-foot: js/timeline-js.html
                     {% for item in onDate %}
                     <div class="col-lg-4 col-md-6">
                         <a href="{% if item.parentid == nil %}{{ '/item.html' | relative_url | append: '?id=' | append: item.objectid }}{% elsif item.parentid %}{{ '/item.html' | relative_url | append: '?id=' | append: item.parentid | relative_url }}#{{ item.objectid }}{% endif %}" >
-                            {% if item.format contains 'image' or item.youtubeid %}
+                            {% if item.format contains 'image' or item.youtubeid or item.format contains 'compound' and item.filename != '' %}
                             <img class="lazyload img-thumbnail timeline-thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" data-src="{% if item.youtubeid %}{{ 'https://img.youtube.com/vi/' | append: item.youtubeid | append: '/hqdefault.jpg' | relative_url }}{% elsif item.filename contains '/' %}{{ item.filename }}{% else %}{{ item.filename | prepend: '/objects/' | relative_url }}{% endif %}" alt="{{ item.title | escape }}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ item.title | escape }} | {{ item.date | escape }}">
                             {% else %}
                             <div class="card"> 

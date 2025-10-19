@@ -35,7 +35,12 @@ function makeCard(obj) {
     } else if (obj.format.includes("record")) {
         thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-record }}.svg';
     } else if (obj.format.includes("compound")) {
-        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-compound-object }}.svg';
+        // Check if compound object has a filename (image preview)
+        if (obj.filename && !obj.filename.includes('http')) {
+            imgSrc = obj.filename;
+        } else {
+            thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-compound-object }}.svg';
+        }
     } else if (obj.format.includes("multiple")) {
         thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-multiple }}.svg';
     } else {
