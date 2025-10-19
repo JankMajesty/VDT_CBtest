@@ -26,7 +26,6 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
 
 ## African American Suffrage
 
-**[Your thematic analysis paragraph(s) here]**
 
 One of the most common grievances throughout the Vicksburg Daily Times regarded the federal government’s push for nationwide African American suffrage. In the post-Civil War American South, the emancipation of the formerly enslaved was not viewed as progress but instead seen as a punishment given by the victorious North to destroy the South’s white-dominated social and political structure. 
 
@@ -41,7 +40,6 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
 
 ## Southern Lost Cause Mentality
 
-**[Your thematic analysis paragraph(s) here]**
 
 One recurring theme in the Vicksburg Daily Times is the Southern Lost Cause Mentality. Originating from Edward Pollard’s 1866 book titled “The Lost Cause: A New Southern History of the War of the Confederates,” the term “lost cause” refers to the Southern belief that the Confederacy’s cause was not centered on slavery and was heroic in its ideals. Proponents of the “lost cause” mentality chose to revere these ideals in the Post-War era and emphasize the federal government’s oppression of the Southern states. 
 
