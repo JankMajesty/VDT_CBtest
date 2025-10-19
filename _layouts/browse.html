@@ -3,6 +3,7 @@
 layout: page
 custom-foot: js/browse-js.html
 ---
+<script src="{{ '/assets/lib/leaflet/fuse.min.js' | relative_url }}"></script>
 
 {{ content }}
 
@@ -16,6 +17,7 @@ custom-foot: js/browse-js.html
             </div>
         </form>
         <div class="h2" id="numberOf"></div>
+        <div id="searchFeedback" class="mt-1"></div>
     </div>
     <div class="col-md-2">
         <div class="dropdown">

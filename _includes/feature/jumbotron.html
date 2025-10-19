@@ -39,10 +39,26 @@
     border-radius: 0.3rem;
 }   
 #{{ jumbo_div_id }} {
-    background-image: url({{ jumboSrc }});
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: {{ include.position | default: 'center' }};
+    background-image: url({{ jumboSrc }}) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: {{ include.position | default: 'center' }} !important;
+}
+/* Prevent Dark Reader from hiding/inverting the jumbotron image */
+#{{ jumbo_div_id }},
+#{{ jumbo_div_id }}::before,
+#{{ jumbo_div_id }}::after {
+    filter: none !important;
+    background-blend-mode: normal !important;
+    mix-blend-mode: normal !important;
+}
+/* Force visibility in Dark Reader */
+html[data-darkreader-mode] #{{ jumbo_div_id }},
+html[data-darkreader-scheme="dark"] #{{ jumbo_div_id }},
+html[data-darkreader-inline-bgcolor] #{{ jumbo_div_id }} {
+    background-image: url({{ jumboSrc }}) !important;
+    filter: none !important;
+    opacity: 1 !important;
 }
 {% if include.padding %}
 .jumbo-title-box {

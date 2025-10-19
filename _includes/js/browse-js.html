@@ -196,13 +196,31 @@ function makeCard(obj, searchQuery) {
 function filterItems(arr,q) {
     // show loading icon
     loadingIcon.classList.remove("d-none");
+    var searchFeedback = document.querySelector("#searchFeedback");
+    var usedFuzzy = false;
+
     // dont filter if no q
     if (q=="") {
         var filteredItems = arr;
-    } else {
-        q = q.trim().toUpperCase();
-        // js indexOf filter - search both metadata and OCR text
+        if (searchFeedback) searchFeedback.innerHTML = "";
+    } else if (q.trim().length < 3) {
+        // Require minimum 3 characters
         var filteredItems = [];
+        if (searchFeedback) searchFeedback.innerHTML = '<small class="text-muted">Please enter at least 3 characters to search</small>';
+    } else {
+        q = q.trim();
+        var qUpper = q.toUpperCase();
+
+        // Preprocess query for multi-word OR fuzzy matching
+        var fuseQuery = q;
+        var isMultiWord = q.includes(' ');
+        if (isMultiWord) {
+            // Split on spaces and join with OR operator for extended search
+            fuseQuery = q.split(/\s+/).join(' | ');
+        }
+
+        // STEP 1: Try exact substring match first (preserves filter button behavior)
+        var exactMatches = [];
         for (var i = 0, len = arr.length; i < len; i++) {
             var metadataMatch = false;
             var ocrMatch = false;
@@ -210,22 +228,97 @@ function filterItems(arr,q) {
             // Check metadata fields
             var val = "";
             for (var k in arr[i]) {
-                if (k != "img") { val += arr[i][k] + " "; }
+                if (k != "img" && k != "id") { val += arr[i][k] + " "; }
             }
-            if(val.toUpperCase().indexOf(q) != -1){
+            if (val.toUpperCase().indexOf(qUpper) != -1) {
                 metadataMatch = true;
             }
 
             // Check OCR text if available
             if (ocrLoaded && ocrTextCache[arr[i].id]) {
-                if (ocrTextCache[arr[i].id].toUpperCase().indexOf(q) != -1) {
+                if (ocrTextCache[arr[i].id].toUpperCase().indexOf(qUpper) != -1) {
                     ocrMatch = true;
                 }
             }
 
-            // Include item if either metadata or OCR matches
             if (metadataMatch || ocrMatch) {
-                filteredItems.push(arr[i]);
+                exactMatches.push(arr[i]);
+            }
+        }
+
+        // STEP 2: Always use fuzzy search to catch typos and variations
+        // Use fuzzy search for better recall
+        var metadataFuse = new Fuse(arr, {
+            keys: Object.keys(arr[0]).filter(k => k !== 'img' && k !== 'id'),
+            threshold: 0.5,          // Balanced: more forgiving (was 0.3)
+            distance: 200,           // Increased search distance (was 100)
+            ignoreLocation: true,
+            minMatchCharLength: 3,
+            includeScore: true,
+            shouldSort: true,
+            useExtendedSearch: true  // Enable OR queries with | operator
+        });
+
+        var metadataResults = metadataFuse.search(fuseQuery);
+        var fuzzyMatchedIds = new Set(metadataResults.map(r => r.item.id));
+
+        // Search OCR text if loaded (more lenient for OCR errors)
+        if (ocrLoaded) {
+            var ocrSearchData = arr.map(item => ({
+                id: item.id,
+                ocrText: ocrTextCache[item.id] || ''
+            })).filter(item => item.ocrText !== '');
+
+            if (ocrSearchData.length > 0) {
+                var ocrFuse = new Fuse(ocrSearchData, {
+                    keys: ['ocrText'],
+                    threshold: 0.6,          // Balanced for OCR errors (was 0.4)
+                    distance: 300,           // Increased (was 200)
+                    ignoreLocation: true,
+                    minMatchCharLength: 3,
+                    includeScore: true,
+                    useExtendedSearch: true  // Enable OR queries
+                });
+
+                var ocrResults = ocrFuse.search(fuseQuery);
+                ocrResults.forEach(r => fuzzyMatchedIds.add(r.item.id));
+            }
+        }
+
+        // Combine exact and fuzzy matches, but prioritize exact matches
+        var exactIds = new Set(exactMatches.map(item => item.id));
+        var allMatchedIds = new Set([...exactIds, ...fuzzyMatchedIds]);
+
+        // Filter items keeping exact matches first, then fuzzy-only matches
+        var filteredItems = [];
+        exactMatches.forEach(item => filteredItems.push(item));
+        arr.forEach(item => {
+            if (fuzzyMatchedIds.has(item.id) && !exactIds.has(item.id)) {
+                filteredItems.push(item);
+            }
+        });
+
+        // Show fuzzy search feedback only if fuzzy found additional results
+        var fuzzyOnlyCount = fuzzyMatchedIds.size - exactIds.size;
+        if (searchFeedback) {
+            if (fuzzyOnlyCount > 0) {
+                var metadataCount = metadataResults.filter(r => !exactIds.has(r.item.id)).length;
+                var ocrOnlyCount = fuzzyOnlyCount - metadataCount;
+                var feedbackText = '<small class="text-muted">';
+
+                // Explain OR matching if multi-word query
+                if (isMultiWord) {
+                    feedbackText += 'Searching for: ' + q.split(/\s+/).map(w => '"' + w + '"').join(' OR ') + ' (approximate matching). ';
+                }
+
+                feedbackText += 'Showing ' + fuzzyOnlyCount + ' additional approximate match' + (fuzzyOnlyCount > 1 ? 'es' : '');
+                if (ocrLoaded && ocrOnlyCount > 0) {
+                    feedbackText += ` (${metadataCount} in metadata, ${ocrOnlyCount} in OCR text)`;
+                }
+                feedbackText += '</small>';
+                searchFeedback.innerHTML = feedbackText;
+            } else {
+                searchFeedback.innerHTML = "";
             }
         }
     }
