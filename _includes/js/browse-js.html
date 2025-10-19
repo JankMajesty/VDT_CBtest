@@ -15,8 +15,88 @@ var items = [
     { "title":{{ i.title | strip | jsonify }}, "format":{% if i.format %}{{ i.format | jsonify }}{% else %}""{% endif %}, {% for f in fields %}{% if i[f.field] %}{{ f.field | jsonify }}:{{ i[f.field] | strip | jsonify }},{% endif %}{% endfor %} {% if i.youtubeid %} "youtube": {{ i.youtubeid | jsonify }}, {% endif %}{% if  i.filename contains '/' %}"filename": "{{ i.filename }}" {% else %}"filename":"{{ '/objects/' | relative_url | append: i.filename }}"{% endif %}, "link": "{% if i.parentid %}{{ i.parentid }}#{{ i.objectid }}{% else %}{{ i.objectid }}{% endif %}", "id":{{ i.objectid | jsonify }} }{% unless forloop.last %},{% endunless %}{% endfor %}
 ];
 
-/* function to create cards for each item */ 
-function makeCard(obj) {
+/* load OCR text data */
+var ocrFilePaths = {};
+var ocrTextCache = {};
+var ocrLoaded = false;
+
+// First, load the mapping of objectids to OCR file paths
+fetch('{{ "/assets/data/ocr-text.json" | relative_url }}')
+    .then(response => response.json())
+    .then(data => {
+        ocrFilePaths = data;
+        // Now fetch all OCR text files
+        var fetchPromises = [];
+        for (var objectid in ocrFilePaths) {
+            fetchPromises.push(
+                fetch(ocrFilePaths[objectid])
+                    .then(response => response.text())
+                    .then(text => {
+                        // Extract objectid from the promise chain
+                        var id = Object.keys(ocrFilePaths).find(key => ocrFilePaths[key] === response.url.split('/').slice(-2).join('/').replace(/^/, '/'));
+                        // Store using a closure to capture the correct objectid
+                        return {id: Object.keys(ocrFilePaths)[fetchPromises.length - 1], text: text};
+                    })
+            );
+        }
+
+        // Better approach: fetch each file with its objectid
+        var allFetches = Object.keys(ocrFilePaths).map(function(objectid) {
+            return fetch(ocrFilePaths[objectid])
+                .then(response => response.text())
+                .then(text => {
+                    ocrTextCache[objectid] = text;
+                })
+                .catch(err => console.log('Failed to load OCR for ' + objectid));
+        });
+
+        return Promise.all(allFetches);
+    })
+    .then(() => {
+        ocrLoaded = true;
+        console.log('OCR text loaded for ' + Object.keys(ocrTextCache).length + ' items');
+    })
+    .catch(err => console.log('OCR data not available:', err));
+
+/* helper function to extract snippet around match (±100 chars) */
+function extractSnippet(text, searchTerm) {
+    var upperText = text.toUpperCase();
+    var upperTerm = searchTerm.toUpperCase();
+    var index = upperText.indexOf(upperTerm);
+
+    if (index === -1) return null;
+
+    // Extract ~200 chars total (100 before, match, 100 after)
+    var start = Math.max(0, index - 100);
+    var end = Math.min(text.length, index + searchTerm.length + 100);
+
+    var snippet = text.substring(start, end);
+
+    // Add ellipsis if not at start/end
+    if (start > 0) snippet = '...' + snippet;
+    if (end < text.length) snippet = snippet + '...';
+
+    return snippet;
+}
+
+/* helper function to highlight search term in text */
+function highlightMatch(text, searchTerm) {
+    var upperText = text.toUpperCase();
+    var upperTerm = searchTerm.toUpperCase();
+    var index = upperText.indexOf(upperTerm);
+
+    if (index === -1) return text;
+
+    // Wrap the matched term with <mark> tag
+    var before = text.substring(0, index);
+    var match = text.substring(index, index + searchTerm.length);
+    var after = text.substring(index + searchTerm.length);
+
+    return before + '<mark>' + match + '</mark>' + after;
+}
+
+/* function to create cards for each item */
+function makeCard(obj, searchQuery) {
     // find item link
     var itemHref = "{{ '/item.html' | relative_url | append: '?id=' }}" + obj.link;
     // find images
@@ -77,6 +157,14 @@ function makeCard(obj) {
     }
     {% endunless %}{% endfor %}
     card += '</p>';
+    // add OCR snippet if there's a search query and OCR match
+    if (searchQuery && searchQuery !== "" && ocrLoaded && ocrTextCache[obj.id]) {
+        var snippet = extractSnippet(ocrTextCache[obj.id], searchQuery);
+        if (snippet) {
+            var highlightedSnippet = highlightMatch(snippet, searchQuery);
+            card += '<div class="ocr-snippet"><small><strong>OCR Text Match:</strong> ' + highlightedSnippet + '</small></div>';
+        }
+    }
     // media type
     if(obj.format != "") {
         card += '<p class="card-text"><small><a class="btn btn-sm btn-outline-secondary" href="{{ page.url | relative_url }}#' + encodeURIComponent(obj.format) + '">' + 
@@ -108,30 +196,46 @@ function makeCard(obj) {
 function filterItems(arr,q) {
     // show loading icon
     loadingIcon.classList.remove("d-none");
-    // dont filter if no q 
-    if (q=="") { 
-        var filteredItems = arr; 
+    // dont filter if no q
+    if (q=="") {
+        var filteredItems = arr;
     } else {
-        q = q.trim().toUpperCase(); 
-        // js indexOf filter
+        q = q.trim().toUpperCase();
+        // js indexOf filter - search both metadata and OCR text
         var filteredItems = [];
         for (var i = 0, len = arr.length; i < len; i++) {
+            var metadataMatch = false;
+            var ocrMatch = false;
+
+            // Check metadata fields
             var val = "";
-            for (var k in arr[i]) { 
+            for (var k in arr[i]) {
                 if (k != "img") { val += arr[i][k] + " "; }
             }
             if(val.toUpperCase().indexOf(q) != -1){
+                metadataMatch = true;
+            }
+
+            // Check OCR text if available
+            if (ocrLoaded && ocrTextCache[arr[i].id]) {
+                if (ocrTextCache[arr[i].id].toUpperCase().indexOf(q) != -1) {
+                    ocrMatch = true;
+                }
+            }
+
+            // Include item if either metadata or OCR matches
+            if (metadataMatch || ocrMatch) {
                 filteredItems.push(arr[i]);
             }
         }
     }
-    // add number 
+    // add number
     document.querySelector("#numberOf").innerHTML = filteredItems.length + " of " + items.length + " items";
-    
+
     // add stuff, make cards first in giant var, then add all at once to speed things up
     var cards = "";
     for (var i = 0, len = filteredItems.length; i < len; i++) {
-        cards += makeCard(filteredItems[i]);
+        cards += makeCard(filteredItems[i], q);
     }
     browseItemsDiv.innerHTML = cards;
 

@@ -1,4 +1,22 @@
-/* 
-    Put your custom SCSS here! 
+/*
+    Put your custom SCSS here!
     This allows you to override any CollectionBuilder or Bootstrap CSS without modifying the base theme files directly.
 */
+
+/* OCR snippet display styling */
+.ocr-snippet {
+    margin-top: 0.75rem;
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    border-left: 3px solid #6c757d;
+    border-radius: 0.25rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Highlight matched search terms in OCR snippets */
+mark {
+    background-color: #ffeb3b;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.15rem;
+}

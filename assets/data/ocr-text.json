@@ -1,0 +1,12 @@
+---
+# Generate JSON object mapping objectids to their OCR text file paths
+# The actual OCR text will be loaded client-side via fetch
+---
+{
+{%- assign items_with_ocr = site.data[site.metadata] | where_exp: "item","item.object_transcript" -%}
+{%- for item in items_with_ocr -%}
+    {%- if item.object_transcript contains '.txt' -%}
+    "{{ item.objectid }}": "{{ item.object_transcript | relative_url }}"{% unless forloop.last %},{% endunless %}
+    {%- endif -%}
+{%- endfor -%}
+}
