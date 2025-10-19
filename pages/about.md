@@ -1,6 +1,6 @@
 ---
 title: About
-layout: about
+layout: page
 permalink: /about.html
 # include CollectionBuilder info at bottom
 credits: true
@@ -8,7 +8,7 @@ credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
 
-{% include feature/jumbotron.html objectid="https://cdil.lib.uidaho.edu/images/palouse_sm.jpg" %}
+{% include feature/jumbotron.html objectid="/assets/img/the-black-vote.jpg" alt="1867 Harper's Weekly political cartoon by Thomas Nast, depicting an African-American man casting his ballot during an election as Andrew Johnson and others look on angrily. Getty Images/Getty Images" padding="8em" %}
 
 {% include feature/nav-menu.html sections="About the Collection;Source Materials;Historical Context;Thematic Organization;About This Project" %}
 
