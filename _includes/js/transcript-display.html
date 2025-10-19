@@ -1,0 +1,200 @@
+<script>
+/* CollectionBuilder OCR Transcript Display
+ * Adds collapsible transcript sections to item pages
+ * Fetches OCR text files and displays them in an accessible, expandable container
+ */
+
+// Function to load and display transcript
+async function loadTranscript(transcriptPath) {
+    try {
+        const response = await fetch(transcriptPath);
+        if (!response.ok) {
+            console.log(`Transcript not found: ${transcriptPath}`);
+            return null;
+        }
+        const text = await response.text();
+        return text;
+    } catch (error) {
+        console.error(`Error loading transcript: ${error}`);
+        return null;
+    }
+}
+
+// Function to create collapsible transcript UI
+function createTranscriptDisplay(transcriptText) {
+    const transcriptHtml = `
+        <div class="transcript-container mt-4 mb-4">
+            <button class="btn btn-outline-secondary btn-block transcript-toggle"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#transcript-content"
+                    aria-expanded="false"
+                    aria-controls="transcript-content">
+                <svg class="bi me-2" width="16" height="16" fill="currentColor">
+                    <use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-text"/>
+                </svg>
+                Show OCR Text
+            </button>
+            <div class="collapse" id="transcript-content">
+                <div class="card card-body mt-2 transcript-text">
+                    <p class="text-muted small mb-2">
+                        <em>OCR text extracted from historical newspaper. May contain errors.</em>
+                    </p>
+                    <pre class="transcript-content">${transcriptText}</pre>
+                </div>
+            </div>
+        </div>
+    `;
+    return transcriptHtml;
+}
+
+// Main function to initialize transcript display for an item
+// This is called from item-js.html after metadata is rendered
+async function displayTranscriptForItem(item, metadataContainerId) {
+    // Check if item has object_transcript field
+    if (item.object_transcript && item.object_transcript.trim() !== '') {
+        const transcriptPath = item.object_transcript;
+
+        // Load the transcript
+        const transcriptText = await loadTranscript(transcriptPath);
+
+        if (transcriptText) {
+            // Create unique IDs for this transcript instance
+            const transcriptId = 'transcript-content-' + item.objectid;
+            const transcriptHtml = `
+                <div class="transcript-container mt-3 mb-3">
+                    <button class="btn btn-outline-secondary btn-sm w-100 transcript-toggle"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#${transcriptId}"
+                            aria-expanded="false"
+                            aria-controls="${transcriptId}">
+                        <svg class="bi me-2" width="16" height="16" fill="currentColor">
+                            <use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-text"/>
+                        </svg>
+                        Show OCR Text
+                    </button>
+                    <div class="collapse" id="${transcriptId}">
+                        <div class="card card-body mt-2 transcript-text">
+                            <p class="text-muted small mb-2">
+                                <em>OCR text extracted from historical newspaper. May contain errors.</em>
+                            </p>
+                            <pre class="transcript-content">${transcriptText}</pre>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Insert after the metadata section
+            const metadataDiv = document.getElementById(metadataContainerId || 'item-metadata');
+            if (metadataDiv) {
+                // Check if transcript already added
+                if (!metadataDiv.nextElementSibling || !metadataDiv.nextElementSibling.classList.contains('transcript-container')) {
+                    metadataDiv.insertAdjacentHTML('afterend', transcriptHtml);
+
+                    // Add event listener for toggle button text change
+                    const toggleBtn = metadataDiv.nextElementSibling.querySelector('.transcript-toggle');
+                    const transcriptCollapse = document.getElementById(transcriptId);
+
+                    if (toggleBtn && transcriptCollapse) {
+                        transcriptCollapse.addEventListener('shown.bs.collapse', function () {
+                            toggleBtn.innerHTML = `
+                                <svg class="bi me-2" width="16" height="16" fill="currentColor">
+                                    <use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-text"/>
+                                </svg>
+                                Hide OCR Text
+                            `;
+                        });
+
+                        transcriptCollapse.addEventListener('hidden.bs.collapse', function () {
+                            toggleBtn.innerHTML = `
+                                <svg class="bi me-2" width="16" height="16" fill="currentColor">
+                                    <use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-text"/>
+                                </svg>
+                                Show OCR Text
+                            `;
+                        });
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Function to add transcript to compound object child items
+function initTranscriptsForCompoundItems(childItems) {
+    if (childItems && childItems.length > 0) {
+        childItems.forEach(function(child, index) {
+            if (child.object_transcript) {
+                // Listen for modal show event for this specific child
+                const modalId = child.objectid;
+                const modalElement = document.getElementById(modalId);
+
+                if (modalElement) {
+                    // Add event listener for when this modal is shown
+                    modalElement.addEventListener('shown.bs.modal', function handler(e) {
+                        // Find the metadata div within this modal
+                        const metadataId = 'metadata-' + child.objectid.replace(/[^a-zA-Z0-9-_]/g, '-');
+                        displayTranscriptForItem(child, metadataId);
+
+                        // Remove the handler after first execution
+                        e.target.removeEventListener('shown.bs.modal', handler);
+                    });
+                }
+            }
+        });
+    }
+}
+
+// CSS styles for transcript display
+const transcriptStyles = `
+<style>
+    .transcript-container {
+        border-top: 1px solid #dee2e6;
+        padding-top: 1rem;
+    }
+
+    .transcript-toggle {
+        width: 100%;
+        text-align: left;
+        font-weight: 500;
+    }
+
+    .transcript-text {
+        background-color: #f8f9fa;
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    .transcript-content {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        margin-bottom: 0;
+    }
+
+    /* Scrollbar styling */
+    .transcript-text::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .transcript-text::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .transcript-text::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+
+    .transcript-text::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+</style>
+`;
+
+// Insert styles into document
+document.head.insertAdjacentHTML('beforeend', transcriptStyles);
+</script>

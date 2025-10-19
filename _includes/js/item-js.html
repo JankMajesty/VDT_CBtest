@@ -82,7 +82,9 @@ function displayItem(record, prev_id, next_id, compound_object) {
     /* function to add item metadata */
     function generateMetadata(item) {
         var fields = '<dl>';
-        {% for f in fields %}{% if f.browse_link == "true" %}
+        {% for f in fields %}{% if f.field == "object_transcript" %}
+        /* Skip object_transcript - it's handled separately by transcript display */
+        {% elsif f.browse_link == "true" %}
         if (item[{{ f.field | jsonify }}]) {
             var topics = item[{{ f.field | jsonify }}].split(';');
             var browseLinks = "";
@@ -271,7 +273,7 @@ function displayItem(record, prev_id, next_id, compound_object) {
                                         </div>
 
                                         <div class="col-md-4">
-                                            <div class="metadata">
+                                            <div class="metadata" id="metadata-${compoundItem[i].objectid.replace(/[^a-zA-Z0-9-_]/g, '-')}">
                                                 ${generateMetadata(compoundItem[i])}
                                             </div>
                                         </div>
@@ -392,9 +394,19 @@ function displayItem(record, prev_id, next_id, compound_object) {
         `;
     }
     document.getElementById("item-content").innerHTML = itemContent;
-    
+
     /* add item metadata */
     document.getElementById("item-metadata").innerHTML = generateMetadata(record);
+
+    /* add transcript display if available */
+    if (typeof displayTranscriptForItem === 'function') {
+        displayTranscriptForItem(record, 'item-metadata');
+    }
+
+    /* add transcripts for compound object children */
+    if (typeof initTranscriptsForCompoundItems === 'function' && compoundItem && compoundItem.length > 0) {
+        initTranscriptsForCompoundItems(compoundItem);
+    }
 
     {% if site.data.theme.browse-buttons == true %}
     /* add prev+next nav */
