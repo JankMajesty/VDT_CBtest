@@ -4,12 +4,17 @@
  * Fetches OCR text files and displays them in an accessible, expandable container
  */
 
+// Baseurl for GitHub Pages compatibility
+var CB_BASEURL = "{{ site.baseurl | default: '' }}";
+
 // Function to load and display transcript
 async function loadTranscript(transcriptPath) {
     try {
-        const response = await fetch(transcriptPath);
+        // Handle baseurl for GitHub Pages deployment
+        const url = transcriptPath.startsWith('/') ? (CB_BASEURL + transcriptPath) : transcriptPath;
+        const response = await fetch(url);
         if (!response.ok) {
-            console.log(`Transcript not found: ${transcriptPath}`);
+            console.log(`Transcript not found: ${url}`);
             return null;
         }
         const text = await response.text();
@@ -60,9 +65,11 @@ async function displayTranscriptForItem(item, metadataContainerId) {
 
         if (transcriptText) {
             // Create unique IDs for this transcript instance
-            const transcriptId = 'transcript-content-' + item.objectid;
+            const sanitizedId = (item.objectid || '').toString().replace(/[^a-zA-Z0-9-_]/g, '-');
+            const transcriptId = 'transcript-content-' + sanitizedId;
+            const containerId = transcriptId + '-container';
             const transcriptHtml = `
-                <div class="transcript-container mt-3 mb-3">
+                <div class="transcript-container mt-3 mb-3" id="${containerId}">
                     <button class="btn btn-outline-secondary btn-sm w-100 transcript-toggle"
                             type="button"
                             data-bs-toggle="collapse"
@@ -85,36 +92,40 @@ async function displayTranscriptForItem(item, metadataContainerId) {
                 </div>
             `;
 
-            // Insert after the metadata section
+            const transcriptSlot = document.getElementById('transcript-slot-' + sanitizedId);
             const metadataDiv = document.getElementById(metadataContainerId || 'item-metadata');
-            if (metadataDiv) {
-                // Check if transcript already added
-                if (!metadataDiv.nextElementSibling || !metadataDiv.nextElementSibling.classList.contains('transcript-container')) {
-                    metadataDiv.insertAdjacentHTML('afterend', transcriptHtml);
 
-                    // Add event listener for toggle button text change
-                    const toggleBtn = metadataDiv.nextElementSibling.querySelector('.transcript-toggle');
-                    const transcriptCollapse = document.getElementById(transcriptId);
+            if (transcriptSlot) {
+                if (!document.getElementById(containerId)) {
+                    transcriptSlot.insertAdjacentHTML('beforeend', transcriptHtml);
+                }
+            } else if (metadataDiv && !document.getElementById(containerId)) {
+                metadataDiv.insertAdjacentHTML('afterend', transcriptHtml);
+            }
 
-                    if (toggleBtn && transcriptCollapse) {
-                        transcriptCollapse.addEventListener('shown.bs.collapse', function () {
-                            toggleBtn.innerHTML = `
-                                <svg class="bi me-2" width="16" height="16" fill="currentColor">
-                                    <use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-text"/>
-                                </svg>
-                                Hide OCR Text
-                            `;
-                        });
+            const transcriptContainer = document.getElementById(containerId);
+            if (transcriptContainer) {
+                const toggleBtn = transcriptContainer.querySelector('.transcript-toggle');
+                const transcriptCollapse = document.getElementById(transcriptId);
 
-                        transcriptCollapse.addEventListener('hidden.bs.collapse', function () {
-                            toggleBtn.innerHTML = `
-                                <svg class="bi me-2" width="16" height="16" fill="currentColor">
-                                    <use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-text"/>
-                                </svg>
-                                Show OCR Text
-                            `;
-                        });
-                    }
+                if (toggleBtn && transcriptCollapse) {
+                    transcriptCollapse.addEventListener('shown.bs.collapse', function () {
+                        toggleBtn.innerHTML = `
+                            <svg class="bi me-2" width="16" height="16" fill="currentColor">
+                                <use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-text"/>
+                            </svg>
+                            Hide OCR Text
+                        `;
+                    });
+
+                    transcriptCollapse.addEventListener('hidden.bs.collapse', function () {
+                        toggleBtn.innerHTML = `
+                            <svg class="bi me-2" width="16" height="16" fill="currentColor">
+                                <use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-text"/>
+                            </svg>
+                            Show OCR Text
+                        `;
+                    });
                 }
             }
         }
@@ -152,6 +163,7 @@ const transcriptStyles = `
     .transcript-container {
         border-top: 1px solid #dee2e6;
         padding-top: 1rem;
+        text-align: left !important;
     }
 
     .transcript-toggle {
@@ -164,6 +176,7 @@ const transcriptStyles = `
         background-color: #f8f9fa;
         max-height: 500px;
         overflow-y: auto;
+        text-align: left !important;
     }
 
     .transcript-content {
@@ -173,6 +186,7 @@ const transcriptStyles = `
         white-space: pre-wrap;
         word-wrap: break-word;
         margin-bottom: 0;
+        text-align: left !important;
     }
 
     /* Scrollbar styling */
@@ -191,6 +205,12 @@ const transcriptStyles = `
 
     .transcript-text::-webkit-scrollbar-thumb:hover {
         background: #555;
+    }
+
+    .item-action-wrapper .transcript-container {
+        border-top: 0;
+        padding-top: 0.5rem;
+        margin-top: 0;
     }
 </style>
 `;

@@ -104,7 +104,8 @@ function displayItem(record, prev_id, next_id, compound_object) {
 
     /* function to add download, timeline, and map links */
     function addButtons(item) {
-        itemLink = '<div class="btn-group" role="group" aria-label="Item options">'
+        var sanitizedId = (item.objectid || '').toString().replace(/[^a-zA-Z0-9-_]/g, '-');
+        itemLink = '<div class="item-action-wrapper" id="item-actions-' + sanitizedId + '"><div class="btn-group" role="group" aria-label="Item options">';
         {% if stubs contains "timeline" %}
         /* add link to view on timeline */
         if (item.date) {
@@ -139,7 +140,7 @@ function displayItem(record, prev_id, next_id, compound_object) {
         }
         {%- endif -%}
         itemLink += item.format.includes('compound_object') || item.format.includes('multiple') ? compoundDownload : itemDownload;
-        itemLink += '</div>'
+        itemLink += '</div><div class="mt-2 transcript-slot" id="transcript-slot-' + sanitizedId + '"></div></div>';
     };
 
     /* create compound object cards */
@@ -404,8 +405,11 @@ function displayItem(record, prev_id, next_id, compound_object) {
     }
 
     /* add transcripts for compound object children */
-    if (typeof initTranscriptsForCompoundItems === 'function' && compoundItem && compoundItem.length > 0) {
-        initTranscriptsForCompoundItems(compoundItem);
+    if (typeof initTranscriptsForCompoundItems === 'function' && compound_object && compound_object.length > 0) {
+        // Use setTimeout to allow DOM to finish parsing the modals
+        setTimeout(function() {
+            initTranscriptsForCompoundItems(compound_object);
+        }, 50);
     }
 
     {% if site.data.theme.browse-buttons == true %}
