@@ -10,7 +10,7 @@ credits: true
 
 {% include feature/jumbotron.html objectid="https://cdil.lib.uidaho.edu/images/palouse_sm.jpg" %}
 
-{% include feature/nav-menu.html sections="About the Collection;Source Materials;Historical Context;About This Project" %}
+{% include feature/nav-menu.html sections="About the Collection;Source Materials;Historical Context;Thematic Organization;About This Project" %}
 
 ## About the Collection
 
@@ -23,6 +23,10 @@ These digitized newspaper images are courtesy of the Briscoe American History Ce
 ### Historical Context
 
 Published during Reconstruction, the Vicksburg Daily Times provides a window into the political, social, and economic conditions of post-Civil War Mississippi. Vicksburg, having been the site of a crucial Civil War siege in 1863, was a significant location during this transformative period in American history.
+
+### Thematic Organization
+
+This collection is organized around three key themes of Reconstruction: the Military Reconstruction Act of 1867, African American Suffrage, and Southern Lost Cause Mentality. Visit our [Themes page]({{ '/themes.html' | relative_url }}) to explore scholarly analysis and browse newspapers by theme.
 
 ### About This Project
 
