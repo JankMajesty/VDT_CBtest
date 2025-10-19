@@ -14,11 +14,9 @@ This collection highlights fifteen newspaper issues from the Vicksburg Daily Tim
 
 ## Military Reconstruction Act (1867)
 
-**[Your thematic analysis paragraph(s) here]**
+One of the most common items listed in the Vicksburg Daily Times newspapers as a cause for grievance is the Military Reconstruction Act of 1867 (Military Bill). This was the first of the Reconstruction Acts being passed through Congress after the Civil War, and required the southern states to write new constitutions and for the citizens of those states - including African Americans - to vote on the new constitution. Additionally, southern states were required to ratify the Fourteenth Amendment to the American Constitution into law. 
 
-*Suggested discussion points: Sherman's Bill, military districts, voter registration, Southern resistance to federal military presence, timeline of Military Reconstruction Acts, reunification of Southern military into Union, congressional debates, appointment of generals to Southern districts*
-
-The selected newspaper issues document the passage and immediate aftermath of the Military Reconstruction Acts, also known as Sherman's Bill. These articles reveal Southern perspectives on the military occupation, the division of the South into military districts, and the registration of voters including freedmen.
+The Vicksburg Daily Times Newspapers highlight the negative southern response to the passing of this bill through many editorials, news reports and reprinted speeches in its effort to elucidate and persuade public opinion against this bill. The volumes curated in this website reveal a consistent narrative against the reintegration of southern states into the Union and also fear of the African American vote. 
 
 **Explore the newspapers:**
 
@@ -30,9 +28,10 @@ The selected newspaper issues document the passage and immediate aftermath of th
 
 **[Your thematic analysis paragraph(s) here]**
 
-*Suggested discussion points: Voting rights debates, freedmen's political participation, Radical Republican policies, Southern responses to Black suffrage, voter registration efforts, constitutional amendments, debates over citizenship and voting rights*
+One of the most common grievances throughout the Vicksburg Daily Times regarded the federal government’s push for nationwide African American suffrage. In the post-Civil War American South, the emancipation of the formerly enslaved was not viewed as progress but instead seen as a punishment given by the victorious North to destroy the South’s white-dominated social and political structure. 
 
-The selected issues explore the contentious debates surrounding African American suffrage during Reconstruction. The newspaper articles provide insight into how white Southerners grappled with the expansion of voting rights to formerly enslaved people.
+Through many scathing editorials, news reports, and reprinted speeches, the Vicksburg Daily Times echoes the sentiment of suffrage as punishment in its efforts to shape the public opinion against this radical Republican policy. The articles curated in this website reveal a constant overarching narrative that questioned the integration of Black men and women into society and spread fear of the end of traditional Southern values. As you explore these articles, you will see how the Vicksburg Daily Times used its platform to strongly oppose suffrage, framing it as one of the worst injustices committed against the white citizens of the defeated South.
+
 
 **Explore the newspapers:**
 
@@ -44,9 +43,10 @@ The selected issues explore the contentious debates surrounding African American
 
 **[Your thematic analysis paragraph(s) here]**
 
-*Suggested discussion points: Lost Cause mythology, Southern nostalgia for antebellum society, resistance narratives, rhetoric of liberty and tyranny, portrayal of Confederacy as noble cause, newspaper editorial positions, perpetuation of Lost Cause ideology*
+One recurring theme in the Vicksburg Daily Times is the Southern Lost Cause Mentality. Originating from Edward Pollard’s 1866 book titled “The Lost Cause: A New Southern History of the War of the Confederates,” the term “lost cause” refers to the Southern belief that the Confederacy’s cause was not centered on slavery and was heroic in its ideals. Proponents of the “lost cause” mentality chose to revere these ideals in the Post-War era and emphasize the federal government’s oppression of the Southern states. 
 
-These newspaper issues reveal the emergence and perpetuation of Lost Cause mythology in the immediate post-war period. The articles demonstrate how Southern newspapers framed Reconstruction policies as tyrannical impositions on Southern liberty and honor.
+This is evident in the outrage commonly depicted in articles and opinion pieces of the Vicksburg Daily Times over the military occupation of the South, and the treatment of former Confederate military members and the restriction of their rights, particularly their rights to hold public office.
+
 
 **Explore the newspapers:**
 
