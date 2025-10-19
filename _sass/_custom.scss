@@ -20,3 +20,16 @@ mark {
     padding: 0.1rem 0.2rem;
     border-radius: 0.15rem;
 }
+
+/* Location context in map popups */
+.location-context {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    background-color: #e7f3ff;
+    border-left: 3px solid #0066cc;
+    border-radius: 0.25rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
