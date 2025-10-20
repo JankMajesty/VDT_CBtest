@@ -32,7 +32,7 @@ This collection is organized around three key themes of Reconstruction: the Mili
 
 OCR tools (ABBYY FineReader) were used to generate text from the historic newspaper images. OCR-generated text of historic newspapers is never 100% accurate due to the quality of the digitized image and the technology used.
 
-AI tools (Claude Code Sonnet 4.5 and Haiku 4.5, Cursor, OpenAI Codex, GPT-4) were used in the construction of this website. There was a human-in-the-loop verifying the integrity of outputs at every step of the process.
+AI tools (Claude Code Sonnet 4.5 and Haiku 4.5, Cursor, OpenAI Codex, GPT-5) were used in the construction of this website. There was a human-in-the-loop verifying the integrity of outputs at every step of the process.
 
 ### About This Project
 
