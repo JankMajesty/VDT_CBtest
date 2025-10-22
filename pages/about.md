@@ -14,11 +14,12 @@ credits: true
 
 ## About the Collection
 
-The Vicksburg Daily Times was a newspaper published in Vicksburg, Mississippi during the Reconstruction Era following the American Civil War. This digital collection provides access to newspaper pages from the 1860s, documenting a pivotal period in American and Mississippi history.
+The Vicksburg Daily Times Digital Library showcases digitized newspaper issues covering news primarily impacting Mississippi and the broader South in the year 1867. These papers contain important information revealing Southern attitudes toward African American suffrage, the Reconstruction Act and ensuing military occupation of the South, as well as the Lost Cause mythology embraced by many Southerners.
 
 ### Source Materials
 
-These digitized newspaper images are courtesy of the Briscoe American History Center at the University of Texas at Austin. The Briscoe Center is home to extensive collections documenting Texas and U.S. history, including significant holdings of historical newspapers and publications.
+The Vicksburg Daily Times came to the [Dolph Briscoe American Center for American History](https://briscoecenter.org/) through the acquisition of the [Natchez Trace Collection](https://briscoecenter.org/collections/american-south/). The collection was initially funded by wealthy Confederate veteran George W. Littlefield, who incidentally was an adherent to the Southern Lost Cause mentality expressed in this library’s materials. The original purpose of the collection – which was to effectively whitewash Southern history – has significantly changed since its inception. This digital library aims to honestly reckon with the violent legacy of Mississippi through its interpretation of the collection, motivated by a desire to assist humanities researchers analyzing the postwar South. 
+
 
 ### Historical Context
 
@@ -28,12 +29,13 @@ Published during Reconstruction, the Vicksburg Daily Times provides a window int
 
 This collection is organized around three key themes of Reconstruction: the Military Reconstruction Act of 1867, African American Suffrage, and Southern Lost Cause Mentality. Visit our [Themes page]({{ '/themes.html' | relative_url }}) to explore scholarly analysis and browse newspapers by theme.
 
+### About This Project
+
+This digital collection was created as part of a Digital Libraries class project, demonstrating the process of digitization, metadata creation, and digital exhibit development. The site is built using [CollectionBuilder-GH](https://collectionbuilder.github.io/gh/), an open-source framework for creating digital collection exhibits.
+
 ### OCR and AI Tools
 
 OCR tools (ABBYY FineReader) were used to generate text from the historic newspaper images. OCR-generated text of historic newspapers is never 100% accurate due to the quality of the digitized image and the technology used.
 
 AI tools (Claude Code Sonnet 4.5 and Haiku 4.5, Cursor, OpenAI Codex, GPT-5) were used in the construction of this website. There was a human-in-the-loop verifying the integrity of outputs at every step of the process.
 
-### About This Project
-
-This digital collection was created as part of a Digital Libraries class project, demonstrating the process of digitization, metadata creation, and digital exhibit development. The site is built using [CollectionBuilder-GH](https://collectionbuilder.github.io/gh/), an open-source framework for creating digital collection exhibits. 

@@ -1,17 +1,24 @@
-version: '3.8'
-
+version: "3.8"
 services:
-  jekyll:
-    image: jekyll/jekyll:4.2.2
-    container_name: vdt-jekyll
-    command: jekyll serve --watch --force_polling --incremental
+  site:
+    image: ruby:3.2
+    working_dir: /site
+    volumes:
+      - ./:/site
+      - bundle-cache:/usr/local/bundle
     ports:
       - "4000:4000"
-    volumes:
-      - .:/srv/jekyll
-      - jekyll_data:/usr/local/bundle
+      - "35729:35729"
     environment:
-      - JEKYLL_ENV=development
-
+      JEKYLL_ENV: development
+    command: >
+      bash -lc "
+        apt-get update &&
+        apt-get install -y build-essential git &&
+        gem install bundler &&
+        bundle config set path '/usr/local/bundle' &&
+        bundle install &&
+        bundle exec jekyll serve --livereload --host 0.0.0.0 --baseurl ''
+      "
 volumes:
-  jekyll_data:
+  bundle-cache:

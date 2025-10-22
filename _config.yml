@@ -14,7 +14,7 @@
 # on GitHub Pages it is your github repository's name prefixed with a /
 #baseurl: /collectionbuilder-gh 
 # location of code, the full url to your github repository
-source-code: https://github.com/CollectionBuilder/collectionbuilder-gh
+source-code: https://github.com/JankMajesty/VDT_CBtest
 
 ##########
 # SITE SETTINGS
@@ -25,7 +25,7 @@ title: The Vicksburg Daily Times
 tagline: Reconstruction Era Newspaper from Vicksburg, Mississippi
 # description appears in meta tags and other locations
 # this description might appear in search result lists, keep around 160 characters max
-description: "Digital collection of the Vicksburg Daily Times, a Reconstruction Era newspaper from Vicksburg, Mississippi, February - April 1867, courtesy of the Briscoe American History Center"
+description: "The Vicksburg Daily Times Digital Library showcases digitized newspaper issues covering news primarily impacting Mississippi and the broader South in the year 1867. These papers contain important information revealing Southern attitudes toward African American suffrage, the Reconstruction Act and ensuing military occupation of the South, as well as the Lost Cause mythology embraced by many Southerners."
 # creator of the digital collection, to appear in meta tags; we typically use our GitHub usernames but feel free to just use your name
 author: Lauren Hollister, Lucie Lefler, Lucas McGill, Gabe Mello, and Vivian Myers
 

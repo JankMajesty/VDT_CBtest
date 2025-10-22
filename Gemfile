@@ -4,11 +4,13 @@ source "https://rubygems.org"
 # See versions, https://pages.github.com/versions/
 gem "github-pages"
 
-# If you end up with issues running github-pages on your local machine, 
+# Required for Ruby 3.0+ to serve Jekyll locally
+gem "webrick"
+
+# If you end up with issues running github-pages on your local machine,
 # delete gem github-pages and uncomment the gems below
 
 # gem 'jekyll'
-# gem 'webrick'
 # gem 'logger'
 # gem 'base64'
 # gem 'ostruct'
