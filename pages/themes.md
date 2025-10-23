@@ -23,271 +23,86 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
 <a href="{{ '/browse.html#Military Reconstruction Act' | relative_url }}" class="btn btn-primary btn-lg mb-3">View Military Reconstruction Act Issues</a>
 
 <style>
-  .preview-carousel-wrapper {
-    position: relative;
+  .themes-carousel {
+    height: 500px;
     overflow: hidden;
-    padding: 20px 0 80px 0; /* Extra padding at bottom for caption */
   }
-  .preview-carousel {
+  .themes-carousel .carousel-inner,
+  .themes-carousel .carousel-item {
+    height: 100%;
+  }
+  .themes-carousel .carousel-image-wrapper {
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    position: relative;
-    min-height: 550px;
-    transition: transform 0.6s ease-in-out;
+    background-color: #f8f9fa;
   }
-  .preview-carousel .carousel-item-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    position: absolute;
-    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
-  }
-  .preview-carousel .carousel-item-wrapper.slide-left {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  .preview-carousel .carousel-item-wrapper.slide-center {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  .preview-carousel .carousel-item-wrapper.slide-right {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  .preview-carousel .side-image {
-    flex: 0 0 25%;
-    opacity: 0.4;
-    cursor: pointer;
-  }
-  .preview-carousel .side-image:hover {
-    opacity: 0.6;
-  }
-  .preview-carousel .side-image img {
-    max-height: 400px;
-    width: 100%;
+  .themes-carousel .carousel-image-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
     object-fit: contain;
   }
-  .preview-carousel .center-image {
-    flex: 0 0 50%;
-    z-index: 2;
-  }
-  .preview-carousel .center-image img {
-    max-height: 500px;
-    width: 100%;
-    object-fit: contain;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  }
-  .preview-carousel-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.75);
-    color: white;
+  .themes-carousel .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 15px;
-    text-align: center;
-    border-radius: 0.25rem;
-    transition: opacity 0.3s ease-in-out;
+    border-radius: 5px;
+    left: 10%;
+    right: 10%;
+    bottom: 20px;
   }
-  .carousel-nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
+  .themes-carousel .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 7l4.647 4.646a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
   }
-  .carousel-nav-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  .carousel-nav-btn.prev {
-    left: 10px;
-  }
-  .carousel-nav-btn.next {
-    right: 10px;
+  .themes-carousel .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   }
 </style>
 
-<div class="preview-carousel-wrapper">
-  <div id="militaryBillCarousel" class="preview-carousel">
-    <!-- Will be populated by JavaScript -->
+<div id="militaryBillCarousel" class="carousel slide mb-4 themes-carousel" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-  <button class="carousel-nav-btn prev" onclick="prevSlide()">‹</button>
-  <button class="carousel-nav-btn next" onclick="nextSlide()">›</button>
-  <div id="carouselCaption" class="preview-carousel-caption"></div>
-</div>
-
-<script>
-const carouselImages = [
-  {
-    src: "{{ '/assets/img/ReconstructionAct1867.jpg' | relative_url }}",
-    alt: "Reconstruction Act of 1867 document",
-    caption: "Reconstruction Act of 1867, National Archives, RG 11, General Records of the U.S. Government",
-    modal: "#imageModal1"
-  },
-  {
-    src: "{{ '/assets/img/themes/militaryBill/terribleLaw_VDT222.png' | relative_url }}",
-    alt: "Vicksburg Daily Times article about the Military Bill",
-    caption: "VDT Editorial on the 'Terrible Law'",
-    modal: "#imageModal2"
-  },
-  {
-    src: "{{ '/assets/img/themes/militaryBill/dividedMilitaryDistrictsno210.png' | relative_url }}",
-    alt: "Vicksburg Daily Times article about military districts",
-    caption: "Divided States of the South",
-    modal: "#imageModal3"
-  }
-];
-
-let currentIndex = 0;
-let isTransitioning = false;
-
-function createSlideHTML(prevIndex, currentIdx, nextIndex) {
-  return `
-    <div class="side-image" onclick="prevSlide()">
-      <img src="${carouselImages[prevIndex].src}" alt="${carouselImages[prevIndex].alt}">
-    </div>
-    <div class="center-image" data-bs-toggle="modal" data-bs-target="${carouselImages[currentIdx].modal}">
-      <img src="${carouselImages[currentIdx].src}" alt="${carouselImages[currentIdx].alt}">
-    </div>
-    <div class="side-image" onclick="nextSlide()">
-      <img src="${carouselImages[nextIndex].src}" alt="${carouselImages[nextIndex].alt}">
-    </div>
-  `;
-}
-
-function updateCarousel(direction = 'none') {
-  const carousel = document.getElementById('militaryBillCarousel');
-  const caption = document.getElementById('carouselCaption');
-  const totalImages = carouselImages.length;
-
-  const prevIndex = (currentIndex - 1 + totalImages) % totalImages;
-  const nextIndex = (currentIndex + 1) % totalImages;
-
-  if (direction === 'none') {
-    // Initial load
-    carousel.innerHTML = `<div class="carousel-item-wrapper slide-center">${createSlideHTML(prevIndex, currentIndex, nextIndex)}</div>`;
-    caption.innerHTML = `<p class="mb-0 small">${carouselImages[currentIndex].caption}</p>`;
-  } else {
-    // Create old and new wrapper
-    const oldWrapper = carousel.querySelector('.carousel-item-wrapper');
-    const newWrapper = document.createElement('div');
-    newWrapper.className = 'carousel-item-wrapper';
-    newWrapper.innerHTML = createSlideHTML(prevIndex, currentIndex, nextIndex);
-
-    // Position new wrapper based on direction
-    if (direction === 'next') {
-      newWrapper.classList.add('slide-right');
-      carousel.appendChild(newWrapper);
-
-      // Trigger slide animation
-      setTimeout(() => {
-        oldWrapper.classList.remove('slide-center');
-        oldWrapper.classList.add('slide-left');
-        newWrapper.classList.remove('slide-right');
-        newWrapper.classList.add('slide-center');
-      }, 10);
-    } else {
-      newWrapper.classList.add('slide-left');
-      carousel.appendChild(newWrapper);
-
-      // Trigger slide animation
-      setTimeout(() => {
-        oldWrapper.classList.remove('slide-center');
-        oldWrapper.classList.add('slide-right');
-        newWrapper.classList.remove('slide-left');
-        newWrapper.classList.add('slide-center');
-      }, 10);
-    }
-
-    // Update caption with fade
-    caption.style.opacity = '0';
-    setTimeout(() => {
-      caption.innerHTML = `<p class="mb-0 small">${carouselImages[currentIndex].caption}</p>`;
-      caption.style.opacity = '1';
-    }, 300);
-
-    // Remove old wrapper after transition
-    setTimeout(() => {
-      oldWrapper.remove();
-      isTransitioning = false;
-    }, 650);
-  }
-}
-
-function prevSlide() {
-  if (isTransitioning) return;
-  isTransitioning = true;
-  currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
-  updateCarousel('prev');
-}
-
-function nextSlide() {
-  if (isTransitioning) return;
-  isTransitioning = true;
-  currentIndex = (currentIndex + 1) % carouselImages.length;
-  updateCarousel('next');
-}
-
-// Initialize carousel
-updateCarousel();
-</script>
-
-<!-- Modals for full-size image preview -->
-<div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModal1Label" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="imageModal1Label">Reconstruction Act of 1867</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="carousel-image-wrapper">
+        <img src="{{ '/assets/img/ReconstructionAct1867.jpg' | relative_url }}" alt="Reconstruction Act of 1867 document">
       </div>
-      <div class="modal-body text-center">
-        <img src="{{ '/assets/img/ReconstructionAct1867.jpg' | relative_url }}" class="img-fluid" alt="Reconstruction Act of 1867 document">
-        <p class="mt-3">National Archives, RG 11, General Records of the U.S. Government</p>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Reconstruction Act of 1867</h5>
+        <p>National Archives, RG 11, General Records of the U.S. Government</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img src="{{ '/assets/img/themes/militaryBill/terribleLaw_VDT222.png' | relative_url }}" alt="Vicksburg Daily Times article about the Military Bill">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>VDT Editorial on the 'Terrible Law'</h5>
+        <p>Vicksburg Daily Times commentary on the Military Reconstruction Act</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img src="{{ '/assets/img/themes/militaryBill/dividedMilitaryDistrictsno210.png' | relative_url }}" alt="Vicksburg Daily Times article about military districts">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Divided States of the South</h5>
+        <p>Map showing the South divided into military districts</p>
       </div>
     </div>
   </div>
-</div>
-
-<div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModal2Label" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="imageModal2Label">VDT Editorial on the 'Terrible Law'</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center">
-        <img src="{{ '/assets/img/themes/militaryBill/terribleLaw_VDT222.png' | relative_url }}" class="img-fluid" alt="Vicksburg Daily Times article about the Military Bill">
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="imageModal3" tabindex="-1" aria-labelledby="imageModal3Label" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="imageModal3Label">States of the South Under the Military Bill</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center">
-        <img src="{{ '/assets/img/themes/militaryBill/dividedMilitaryDistrictsno210.png' | relative_url }}" class="img-fluid" alt="Vicksburg Daily Times article about military districts">
-      </div>
-    </div>
-  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#militaryBillCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#militaryBillCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
 ---
@@ -304,212 +119,69 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
 
 <a href="{{ '/browse.html#African American Suffrage' | relative_url }}" class="btn btn-primary btn-lg mb-3">View African American Suffrage Issues</a>
 
-<div class="preview-carousel-wrapper">
-  <div id="suffrageCarousel" class="preview-carousel">
-    <!-- Will be populated by JavaScript -->
+<div id="suffrageCarousel" class="carousel slide mb-4 themes-carousel" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#suffrageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#suffrageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#suffrageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#suffrageCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#suffrageCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
   </div>
-  <button class="carousel-nav-btn prev" onclick="prevSuffrageSlide()">‹</button>
-  <button class="carousel-nav-btn next" onclick="nextSuffrageSlide()">›</button>
-  <div id="suffrageCarouselCaption" class="preview-carousel-caption"></div>
-</div>
-
-<script>
-const suffrageCarouselImages = [
-  {
-    src: "{{ '/assets/img/themes/suffrage/separatingVotes_VDT219.png' | relative_url }}",
-    alt: "VDT article about separating votes",
-    caption: "VDT: Separating Votes",
-    modal: "#suffrageModal1"
-  },
-  {
-    src: "{{ '/assets/img/themes/suffrage/judgeRobb_VDT232.png' | relative_url }}",
-    alt: "VDT article about Judge Robb on African American Suffrage",
-    caption: "VDT: Judge Robb on African American Suffrage",
-    modal: "#suffrageModal2"
-  },
-  {
-    src: "{{ '/assets/img/themes/suffrage/publidLibertyVDT241.png' | relative_url }}",
-    alt: "VDT article about public liberty",
-    caption: "VDT: Public Liberty",
-    modal: "#suffrageModal3"
-  },
-  {
-    src: "{{ '/assets/img/themes/suffrage/castTheRightVote_VDT236.png' | relative_url }}",
-    alt: "VDT article about casting the right vote",
-    caption: "VDT: Cast the Right Vote",
-    modal: "#suffrageModal4"
-  },
-  {
-    src: "{{ '/assets/img/themes/suffrage/whatOughtTheSouthToDo_VDT223.png' | relative_url }}",
-    alt: "VDT article about what ought the South to do",
-    caption: "VDT: What Ought the South to Do",
-    modal: "#suffrageModal5"
-  }
-];
-
-let suffrageCurrentIndex = 0;
-let suffrageIsTransitioning = false;
-
-function createSuffrageSlideHTML(prevIndex, currentIdx, nextIndex) {
-  return `
-    <div class="side-image" onclick="prevSuffrageSlide()">
-      <img src="${suffrageCarouselImages[prevIndex].src}" alt="${suffrageCarouselImages[prevIndex].alt}">
-    </div>
-    <div class="center-image" data-bs-toggle="modal" data-bs-target="${suffrageCarouselImages[currentIdx].modal}">
-      <img src="${suffrageCarouselImages[currentIdx].src}" alt="${suffrageCarouselImages[currentIdx].alt}">
-    </div>
-    <div class="side-image" onclick="nextSuffrageSlide()">
-      <img src="${suffrageCarouselImages[nextIndex].src}" alt="${suffrageCarouselImages[nextIndex].alt}">
-    </div>
-  `;
-}
-
-function updateSuffrageCarousel(direction = 'none') {
-  const carousel = document.getElementById('suffrageCarousel');
-  const caption = document.getElementById('suffrageCarouselCaption');
-  const totalImages = suffrageCarouselImages.length;
-
-  const prevIndex = (suffrageCurrentIndex - 1 + totalImages) % totalImages;
-  const nextIndex = (suffrageCurrentIndex + 1) % totalImages;
-
-  if (direction === 'none') {
-    // Initial load
-    carousel.innerHTML = `<div class="carousel-item-wrapper slide-center">${createSuffrageSlideHTML(prevIndex, suffrageCurrentIndex, nextIndex)}</div>`;
-    caption.innerHTML = `<p class="mb-0 small">${suffrageCarouselImages[suffrageCurrentIndex].caption}</p>`;
-  } else {
-    // Create old and new wrapper
-    const oldWrapper = carousel.querySelector('.carousel-item-wrapper');
-    const newWrapper = document.createElement('div');
-    newWrapper.className = 'carousel-item-wrapper';
-    newWrapper.innerHTML = createSuffrageSlideHTML(prevIndex, suffrageCurrentIndex, nextIndex);
-
-    // Position new wrapper based on direction
-    if (direction === 'next') {
-      newWrapper.classList.add('slide-right');
-      carousel.appendChild(newWrapper);
-
-      // Trigger slide animation
-      setTimeout(() => {
-        oldWrapper.classList.remove('slide-center');
-        oldWrapper.classList.add('slide-left');
-        newWrapper.classList.remove('slide-right');
-        newWrapper.classList.add('slide-center');
-      }, 10);
-    } else {
-      newWrapper.classList.add('slide-left');
-      carousel.appendChild(newWrapper);
-
-      // Trigger slide animation
-      setTimeout(() => {
-        oldWrapper.classList.remove('slide-center');
-        oldWrapper.classList.add('slide-right');
-        newWrapper.classList.remove('slide-left');
-        newWrapper.classList.add('slide-center');
-      }, 10);
-    }
-
-    // Update caption with fade
-    caption.style.opacity = '0';
-    setTimeout(() => {
-      caption.innerHTML = `<p class="mb-0 small">${suffrageCarouselImages[suffrageCurrentIndex].caption}</p>`;
-      caption.style.opacity = '1';
-    }, 300);
-
-    // Remove old wrapper after transition
-    setTimeout(() => {
-      oldWrapper.remove();
-      suffrageIsTransitioning = false;
-    }, 650);
-  }
-}
-
-function prevSuffrageSlide() {
-  if (suffrageIsTransitioning) return;
-  suffrageIsTransitioning = true;
-  suffrageCurrentIndex = (suffrageCurrentIndex - 1 + suffrageCarouselImages.length) % suffrageCarouselImages.length;
-  updateSuffrageCarousel('prev');
-}
-
-function nextSuffrageSlide() {
-  if (suffrageIsTransitioning) return;
-  suffrageIsTransitioning = true;
-  suffrageCurrentIndex = (suffrageCurrentIndex + 1) % suffrageCarouselImages.length;
-  updateSuffrageCarousel('next');
-}
-
-// Initialize carousel
-updateSuffrageCarousel();
-</script>
-
-<!-- Modals for full-size image preview -->
-<div class="modal fade" id="suffrageModal1" tabindex="-1" aria-labelledby="suffrageModal1Label" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="suffrageModal1Label">VDT: Separating Votes</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="carousel-image-wrapper">
+        <img src="{{ '/assets/img/themes/suffrage/separatingVotes_VDT219.png' | relative_url }}" alt="VDT article about separating votes">
       </div>
-      <div class="modal-body text-center">
-        <img src="{{ '/assets/img/themes/suffrage/separatingVotes_VDT219.png' | relative_url }}" class="img-fluid" alt="VDT article about separating votes">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Separating Votes</h5>
+        <p>VDT commentary on voter registration and segregation</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img src="{{ '/assets/img/themes/suffrage/judgeRobb_VDT232.png' | relative_url }}" alt="VDT article about Judge Robb on African American Suffrage">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Judge Robb on African American Suffrage</h5>
+        <p>Legal perspectives on voting rights</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img src="{{ '/assets/img/themes/suffrage/publidLibertyVDT241.png' | relative_url }}" alt="VDT article about public liberty">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Public Liberty</h5>
+        <p>Southern perspectives on citizenship and voting</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img src="{{ '/assets/img/themes/suffrage/castTheRightVote_VDT236.png' | relative_url }}" alt="VDT article about casting the right vote">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Cast the Right Vote</h5>
+        <p>Political messaging around Reconstruction elections</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img src="{{ '/assets/img/themes/suffrage/whatOughtTheSouthToDo_VDT223.png' | relative_url }}" alt="VDT article about what ought the South to do">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>What Ought the South to Do</h5>
+        <p>Editorial on Southern response to voting rights</p>
       </div>
     </div>
   </div>
-</div>
-
-<div class="modal fade" id="suffrageModal2" tabindex="-1" aria-labelledby="suffrageModal2Label" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="suffrageModal2Label">VDT: Judge Robb on African American Suffrage</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center">
-        <img src="{{ '/assets/img/themes/suffrage/judgeRobb_VDT232.png' | relative_url }}" class="img-fluid" alt="VDT article about Judge Robb on African American Suffrage">
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="suffrageModal3" tabindex="-1" aria-labelledby="suffrageModal3Label" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="suffrageModal3Label">VDT: Public Liberty</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center">
-        <img src="{{ '/assets/img/themes/suffrage/publidLibertyVDT241.png' | relative_url }}" class="img-fluid" alt="VDT article about public liberty">
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="suffrageModal4" tabindex="-1" aria-labelledby="suffrageModal4Label" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="suffrageModal4Label">VDT: Cast the Right Vote</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center">
-        <img src="{{ '/assets/img/themes/suffrage/castTheRightVote_VDT236.png' | relative_url }}" class="img-fluid" alt="VDT article about casting the right vote">
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="suffrageModal5" tabindex="-1" aria-labelledby="suffrageModal5Label" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="suffrageModal5Label">VDT: What Ought the South to Do</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center">
-        <img src="{{ '/assets/img/themes/suffrage/whatOughtTheSouthToDo_VDT223.png' | relative_url }}" class="img-fluid" alt="VDT article about what ought the South to do">
-      </div>
-    </div>
-  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#suffrageCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#suffrageCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
 ---
