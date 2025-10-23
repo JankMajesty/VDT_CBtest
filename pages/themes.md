@@ -22,15 +22,271 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
 
 <a href="{{ '/browse.html#Military Reconstruction Act' | relative_url }}" class="btn btn-primary btn-lg mb-3">View Military Reconstruction Act Issues</a>
 
-<div class="row">
-  <div class="col-md-4">
-    {% include feature/image.html objectid="/assets/img/ReconstructionAct1867.jpg" width="100" alt="Reconstruction Act of 1867 document" caption="Reconstruction Act of 1867, National Archives, RG 11, General Records of the U.S. Government" %}
+<style>
+  .preview-carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0 80px 0; /* Extra padding at bottom for caption */
+  }
+  .preview-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    min-height: 550px;
+    transition: transform 0.6s ease-in-out;
+  }
+  .preview-carousel .carousel-item-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    position: absolute;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  }
+  .preview-carousel .carousel-item-wrapper.slide-left {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  .preview-carousel .carousel-item-wrapper.slide-center {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .preview-carousel .carousel-item-wrapper.slide-right {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  .preview-carousel .side-image {
+    flex: 0 0 25%;
+    opacity: 0.4;
+    cursor: pointer;
+  }
+  .preview-carousel .side-image:hover {
+    opacity: 0.6;
+  }
+  .preview-carousel .side-image img {
+    max-height: 400px;
+    width: 100%;
+    object-fit: contain;
+  }
+  .preview-carousel .center-image {
+    flex: 0 0 50%;
+    z-index: 2;
+  }
+  .preview-carousel .center-image img {
+    max-height: 500px;
+    width: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  .preview-carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 0.25rem;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+  .carousel-nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .carousel-nav-btn.prev {
+    left: 10px;
+  }
+  .carousel-nav-btn.next {
+    right: 10px;
+  }
+</style>
+
+<div class="preview-carousel-wrapper">
+  <div id="militaryBillCarousel" class="preview-carousel">
+    <!-- Will be populated by JavaScript -->
   </div>
-  <div class="col-md-4">
-    {% include feature/image.html objectid="/assets/img/themes/militaryBill/terribleLaw_VDT222.png" width="100" alt="Vicksburg Daily Times article about the Military Bill" caption="VDT Editorial on the 'Terrible Law'" %}
+  <button class="carousel-nav-btn prev" onclick="prevSlide()">‹</button>
+  <button class="carousel-nav-btn next" onclick="nextSlide()">›</button>
+  <div id="carouselCaption" class="preview-carousel-caption"></div>
+</div>
+
+<script>
+const carouselImages = [
+  {
+    src: "{{ '/assets/img/ReconstructionAct1867.jpg' | relative_url }}",
+    alt: "Reconstruction Act of 1867 document",
+    caption: "Reconstruction Act of 1867, National Archives, RG 11, General Records of the U.S. Government",
+    modal: "#imageModal1"
+  },
+  {
+    src: "{{ '/assets/img/themes/militaryBill/terribleLaw_VDT222.png' | relative_url }}",
+    alt: "Vicksburg Daily Times article about the Military Bill",
+    caption: "VDT Editorial on the 'Terrible Law'",
+    modal: "#imageModal2"
+  },
+  {
+    src: "{{ '/assets/img/themes/militaryBill/dividedMilitaryDistrictsno210.png' | relative_url }}",
+    alt: "Vicksburg Daily Times article about military districts",
+    caption: "Divided States of the South",
+    modal: "#imageModal3"
+  }
+];
+
+let currentIndex = 0;
+let isTransitioning = false;
+
+function createSlideHTML(prevIndex, currentIdx, nextIndex) {
+  return `
+    <div class="side-image" onclick="prevSlide()">
+      <img src="${carouselImages[prevIndex].src}" alt="${carouselImages[prevIndex].alt}">
+    </div>
+    <div class="center-image" data-bs-toggle="modal" data-bs-target="${carouselImages[currentIdx].modal}">
+      <img src="${carouselImages[currentIdx].src}" alt="${carouselImages[currentIdx].alt}">
+    </div>
+    <div class="side-image" onclick="nextSlide()">
+      <img src="${carouselImages[nextIndex].src}" alt="${carouselImages[nextIndex].alt}">
+    </div>
+  `;
+}
+
+function updateCarousel(direction = 'none') {
+  const carousel = document.getElementById('militaryBillCarousel');
+  const caption = document.getElementById('carouselCaption');
+  const totalImages = carouselImages.length;
+
+  const prevIndex = (currentIndex - 1 + totalImages) % totalImages;
+  const nextIndex = (currentIndex + 1) % totalImages;
+
+  if (direction === 'none') {
+    // Initial load
+    carousel.innerHTML = `<div class="carousel-item-wrapper slide-center">${createSlideHTML(prevIndex, currentIndex, nextIndex)}</div>`;
+    caption.innerHTML = `<p class="mb-0 small">${carouselImages[currentIndex].caption}</p>`;
+  } else {
+    // Create old and new wrapper
+    const oldWrapper = carousel.querySelector('.carousel-item-wrapper');
+    const newWrapper = document.createElement('div');
+    newWrapper.className = 'carousel-item-wrapper';
+    newWrapper.innerHTML = createSlideHTML(prevIndex, currentIndex, nextIndex);
+
+    // Position new wrapper based on direction
+    if (direction === 'next') {
+      newWrapper.classList.add('slide-right');
+      carousel.appendChild(newWrapper);
+
+      // Trigger slide animation
+      setTimeout(() => {
+        oldWrapper.classList.remove('slide-center');
+        oldWrapper.classList.add('slide-left');
+        newWrapper.classList.remove('slide-right');
+        newWrapper.classList.add('slide-center');
+      }, 10);
+    } else {
+      newWrapper.classList.add('slide-left');
+      carousel.appendChild(newWrapper);
+
+      // Trigger slide animation
+      setTimeout(() => {
+        oldWrapper.classList.remove('slide-center');
+        oldWrapper.classList.add('slide-right');
+        newWrapper.classList.remove('slide-left');
+        newWrapper.classList.add('slide-center');
+      }, 10);
+    }
+
+    // Update caption with fade
+    caption.style.opacity = '0';
+    setTimeout(() => {
+      caption.innerHTML = `<p class="mb-0 small">${carouselImages[currentIndex].caption}</p>`;
+      caption.style.opacity = '1';
+    }, 300);
+
+    // Remove old wrapper after transition
+    setTimeout(() => {
+      oldWrapper.remove();
+      isTransitioning = false;
+    }, 650);
+  }
+}
+
+function prevSlide() {
+  if (isTransitioning) return;
+  isTransitioning = true;
+  currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
+  updateCarousel('prev');
+}
+
+function nextSlide() {
+  if (isTransitioning) return;
+  isTransitioning = true;
+  currentIndex = (currentIndex + 1) % carouselImages.length;
+  updateCarousel('next');
+}
+
+// Initialize carousel
+updateCarousel();
+</script>
+
+<!-- Modals for full-size image preview -->
+<div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModal1Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModal1Label">Reconstruction Act of 1867</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="{{ '/assets/img/ReconstructionAct1867.jpg' | relative_url }}" class="img-fluid" alt="Reconstruction Act of 1867 document">
+        <p class="mt-3">National Archives, RG 11, General Records of the U.S. Government</p>
+      </div>
+    </div>
   </div>
-  <div class="col-md-4">
-    {% include feature/image.html objectid="/assets/img/themes/militaryBill/dividedMilitaryDistrictsno210.png" width="100" alt="Vicksburg Daily Times article about military districts" caption="VDT: States of the South Under the Military Bill" %}
+</div>
+
+<div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModal2Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModal2Label">VDT Editorial on the 'Terrible Law'</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="{{ '/assets/img/themes/militaryBill/terribleLaw_VDT222.png' | relative_url }}" class="img-fluid" alt="Vicksburg Daily Times article about the Military Bill">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="imageModal3" tabindex="-1" aria-labelledby="imageModal3Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModal3Label">States of the South Under the Military Bill</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="{{ '/assets/img/themes/militaryBill/dividedMilitaryDistrictsno210.png' | relative_url }}" class="img-fluid" alt="Vicksburg Daily Times article about military districts">
+      </div>
+    </div>
   </div>
 </div>
 
