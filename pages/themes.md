@@ -22,6 +22,18 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
 
 <a href="{{ '/browse.html#Military Reconstruction Act' | relative_url }}" class="btn btn-primary btn-lg mb-3">View Military Reconstruction Act Issues</a>
 
+<div class="row">
+  <div class="col-md-4">
+    {% include feature/image.html objectid="/assets/img/ReconstructionAct1867.jpg" width="100" alt="Reconstruction Act of 1867 document" caption="Reconstruction Act of 1867, National Archives, RG 11, General Records of the U.S. Government" %}
+  </div>
+  <div class="col-md-4">
+    {% include feature/image.html objectid="/assets/img/themes/militaryBill/terribleLaw_VDT222.png" width="100" alt="Vicksburg Daily Times article about the Military Bill" caption="VDT Editorial on the 'Terrible Law'" %}
+  </div>
+  <div class="col-md-4">
+    {% include feature/image.html objectid="/assets/img/themes/militaryBill/dividedMilitaryDistrictsno210.png" width="100" alt="Vicksburg Daily Times article about military districts" caption="VDT: States of the South Under the Military Bill" %}
+  </div>
+</div>
+
 ---
 
 ## African American Suffrage
