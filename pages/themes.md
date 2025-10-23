@@ -304,6 +304,214 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
 
 <a href="{{ '/browse.html#African American Suffrage' | relative_url }}" class="btn btn-primary btn-lg mb-3">View African American Suffrage Issues</a>
 
+<div class="preview-carousel-wrapper">
+  <div id="suffrageCarousel" class="preview-carousel">
+    <!-- Will be populated by JavaScript -->
+  </div>
+  <button class="carousel-nav-btn prev" onclick="prevSuffrageSlide()">‹</button>
+  <button class="carousel-nav-btn next" onclick="nextSuffrageSlide()">›</button>
+  <div id="suffrageCarouselCaption" class="preview-carousel-caption"></div>
+</div>
+
+<script>
+const suffrageCarouselImages = [
+  {
+    src: "{{ '/assets/img/themes/suffrage/separatingVotes_VDT219.png' | relative_url }}",
+    alt: "VDT article about separating votes",
+    caption: "VDT: Separating Votes",
+    modal: "#suffrageModal1"
+  },
+  {
+    src: "{{ '/assets/img/themes/suffrage/judgeRobb_VDT232.png' | relative_url }}",
+    alt: "VDT article about Judge Robb on African American Suffrage",
+    caption: "VDT: Judge Robb on African American Suffrage",
+    modal: "#suffrageModal2"
+  },
+  {
+    src: "{{ '/assets/img/themes/suffrage/publidLibertyVDT241.png' | relative_url }}",
+    alt: "VDT article about public liberty",
+    caption: "VDT: Public Liberty",
+    modal: "#suffrageModal3"
+  },
+  {
+    src: "{{ '/assets/img/themes/suffrage/castTheRightVote_VDT236.png' | relative_url }}",
+    alt: "VDT article about casting the right vote",
+    caption: "VDT: Cast the Right Vote",
+    modal: "#suffrageModal4"
+  },
+  {
+    src: "{{ '/assets/img/themes/suffrage/whatOughtTheSouthToDo_VDT223.png' | relative_url }}",
+    alt: "VDT article about what ought the South to do",
+    caption: "VDT: What Ought the South to Do",
+    modal: "#suffrageModal5"
+  }
+];
+
+let suffrageCurrentIndex = 0;
+let suffrageIsTransitioning = false;
+
+function createSuffrageSlideHTML(prevIndex, currentIdx, nextIndex) {
+  return `
+    <div class="side-image" onclick="prevSuffrageSlide()">
+      <img src="${suffrageCarouselImages[prevIndex].src}" alt="${suffrageCarouselImages[prevIndex].alt}">
+    </div>
+    <div class="center-image" data-bs-toggle="modal" data-bs-target="${suffrageCarouselImages[currentIdx].modal}">
+      <img src="${suffrageCarouselImages[currentIdx].src}" alt="${suffrageCarouselImages[currentIdx].alt}">
+    </div>
+    <div class="side-image" onclick="nextSuffrageSlide()">
+      <img src="${suffrageCarouselImages[nextIndex].src}" alt="${suffrageCarouselImages[nextIndex].alt}">
+    </div>
+  `;
+}
+
+function updateSuffrageCarousel(direction = 'none') {
+  const carousel = document.getElementById('suffrageCarousel');
+  const caption = document.getElementById('suffrageCarouselCaption');
+  const totalImages = suffrageCarouselImages.length;
+
+  const prevIndex = (suffrageCurrentIndex - 1 + totalImages) % totalImages;
+  const nextIndex = (suffrageCurrentIndex + 1) % totalImages;
+
+  if (direction === 'none') {
+    // Initial load
+    carousel.innerHTML = `<div class="carousel-item-wrapper slide-center">${createSuffrageSlideHTML(prevIndex, suffrageCurrentIndex, nextIndex)}</div>`;
+    caption.innerHTML = `<p class="mb-0 small">${suffrageCarouselImages[suffrageCurrentIndex].caption}</p>`;
+  } else {
+    // Create old and new wrapper
+    const oldWrapper = carousel.querySelector('.carousel-item-wrapper');
+    const newWrapper = document.createElement('div');
+    newWrapper.className = 'carousel-item-wrapper';
+    newWrapper.innerHTML = createSuffrageSlideHTML(prevIndex, suffrageCurrentIndex, nextIndex);
+
+    // Position new wrapper based on direction
+    if (direction === 'next') {
+      newWrapper.classList.add('slide-right');
+      carousel.appendChild(newWrapper);
+
+      // Trigger slide animation
+      setTimeout(() => {
+        oldWrapper.classList.remove('slide-center');
+        oldWrapper.classList.add('slide-left');
+        newWrapper.classList.remove('slide-right');
+        newWrapper.classList.add('slide-center');
+      }, 10);
+    } else {
+      newWrapper.classList.add('slide-left');
+      carousel.appendChild(newWrapper);
+
+      // Trigger slide animation
+      setTimeout(() => {
+        oldWrapper.classList.remove('slide-center');
+        oldWrapper.classList.add('slide-right');
+        newWrapper.classList.remove('slide-left');
+        newWrapper.classList.add('slide-center');
+      }, 10);
+    }
+
+    // Update caption with fade
+    caption.style.opacity = '0';
+    setTimeout(() => {
+      caption.innerHTML = `<p class="mb-0 small">${suffrageCarouselImages[suffrageCurrentIndex].caption}</p>`;
+      caption.style.opacity = '1';
+    }, 300);
+
+    // Remove old wrapper after transition
+    setTimeout(() => {
+      oldWrapper.remove();
+      suffrageIsTransitioning = false;
+    }, 650);
+  }
+}
+
+function prevSuffrageSlide() {
+  if (suffrageIsTransitioning) return;
+  suffrageIsTransitioning = true;
+  suffrageCurrentIndex = (suffrageCurrentIndex - 1 + suffrageCarouselImages.length) % suffrageCarouselImages.length;
+  updateSuffrageCarousel('prev');
+}
+
+function nextSuffrageSlide() {
+  if (suffrageIsTransitioning) return;
+  suffrageIsTransitioning = true;
+  suffrageCurrentIndex = (suffrageCurrentIndex + 1) % suffrageCarouselImages.length;
+  updateSuffrageCarousel('next');
+}
+
+// Initialize carousel
+updateSuffrageCarousel();
+</script>
+
+<!-- Modals for full-size image preview -->
+<div class="modal fade" id="suffrageModal1" tabindex="-1" aria-labelledby="suffrageModal1Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="suffrageModal1Label">VDT: Separating Votes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="{{ '/assets/img/themes/suffrage/separatingVotes_VDT219.png' | relative_url }}" class="img-fluid" alt="VDT article about separating votes">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="suffrageModal2" tabindex="-1" aria-labelledby="suffrageModal2Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="suffrageModal2Label">VDT: Judge Robb on African American Suffrage</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="{{ '/assets/img/themes/suffrage/judgeRobb_VDT232.png' | relative_url }}" class="img-fluid" alt="VDT article about Judge Robb on African American Suffrage">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="suffrageModal3" tabindex="-1" aria-labelledby="suffrageModal3Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="suffrageModal3Label">VDT: Public Liberty</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="{{ '/assets/img/themes/suffrage/publidLibertyVDT241.png' | relative_url }}" class="img-fluid" alt="VDT article about public liberty">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="suffrageModal4" tabindex="-1" aria-labelledby="suffrageModal4Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="suffrageModal4Label">VDT: Cast the Right Vote</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="{{ '/assets/img/themes/suffrage/castTheRightVote_VDT236.png' | relative_url }}" class="img-fluid" alt="VDT article about casting the right vote">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="suffrageModal5" tabindex="-1" aria-labelledby="suffrageModal5Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="suffrageModal5Label">VDT: What Ought the South to Do</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="{{ '/assets/img/themes/suffrage/whatOughtTheSouthToDo_VDT223.png' | relative_url }}" class="img-fluid" alt="VDT article about what ought the South to do">
+      </div>
+    </div>
+  </div>
+</div>
+
 ---
 
 ## Southern Lost Cause Mentality
