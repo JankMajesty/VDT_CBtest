@@ -23,7 +23,7 @@ The Vicksburg Daily Times came to the [Dolph Briscoe American Center for America
 
 ### Historical Context
 
-Published during Reconstruction, the Vicksburg Daily Times provides a window into the political, social, and economic conditions of post-Civil War Mississippi. Vicksburg, having been the site of a crucial Civil War siege in 1863, was a significant location during this transformative period in American history.
+Published during Reconstruction, The Vicksburg Daily Times provides a window into the political, social, and economic conditions of post-Civil War Mississippi. Vicksburg, having been the site of a crucial Civil War siege in 1863, was a significant location during this transformative period in American history.
 
 ### Thematic Organization
 
@@ -31,7 +31,7 @@ This collection is organized around three key themes of Reconstruction: the Mili
 
 ### About This Project
 
-This digital collection was created as part of a Digital Libraries class project, demonstrating the process of digitization, metadata creation, and digital exhibit development. The site is built using [CollectionBuilder-GH](https://collectionbuilder.github.io/gh/), an open-source framework for creating digital collection exhibits.
+This digital collection was created by students of the Digital Libraries course at the University of Texas at Austin School of Information. The students received 40 digitized issues of The Vicksburg Daily Times and generated metadata for each issue. 15 of the 40 issues were carefully selected to present on this website according to the selected three key themes.
 
 ### OCR and AI Tools
 
@@ -39,3 +39,17 @@ OCR tools (ABBYY FineReader) were used to generate text from the historic newspa
 
 AI tools (Claude Code Sonnet 4.5 and Haiku 4.5, Cursor, OpenAI Codex, GPT-5) were used in the construction of this website. There was a human-in-the-loop verifying the integrity of outputs at every step of the process.
 
+### Credits
+
+**Special thanks to:**
+- The Dolph Briscoe Center for American History
+- Dr. Albert A. Palacios
+- Marisa Jefferson
+- Aryn Glazier
+
+**Digital exhibit created by:**
+- Lauren Hollister
+- Lucie Lefler
+- Lucas McGill
+- Gabe Mello
+- Vivian Myers
