@@ -43,6 +43,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
     max-width: 100%;
     width: auto;
     object-fit: contain;
+    cursor: zoom-in;
   }
   .themes-carousel .carousel-caption {
     background-color: rgba(0, 0, 0, 0.7);
@@ -58,6 +59,17 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
   .themes-carousel .carousel-control-next-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   }
+  @media (prefers-color-scheme: dark) {
+    .themes-carousel .carousel-image-wrapper {
+      background-color: #1d1f26;
+    }
+    .themes-carousel .carousel-control-prev-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 7l4.647 4.646a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+    }
+    .themes-carousel .carousel-control-next-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+  }
 </style>
 
 <div id="militaryBillCarousel" class="carousel slide mb-4 themes-carousel" data-bs-ride="carousel">
@@ -69,7 +81,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="carousel-image-wrapper">
-        <img src="{{ '/assets/img/ReconstructionAct1867.jpg' | relative_url }}" alt="Reconstruction Act of 1867 document">
+        <img class="themes-carousel-image" src="{{ '/assets/img/ReconstructionAct1867.jpg' | relative_url }}" alt="Reconstruction Act of 1867 document">
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>Reconstruction Act of 1867</h5>
@@ -78,7 +90,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
     </div>
     <div class="carousel-item">
       <div class="carousel-image-wrapper">
-        <img src="{{ '/assets/img/themes/militaryBill/terribleLaw_VDT222.png' | relative_url }}" alt="Vicksburg Daily Times article about the Military Bill">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/militaryBill/terribleLaw_VDT222.png' | relative_url }}" alt="Vicksburg Daily Times article about the Military Bill">
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>VDT Editorial on the 'Terrible Law'</h5>
@@ -87,7 +99,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
     </div>
     <div class="carousel-item">
       <div class="carousel-image-wrapper">
-        <img src="{{ '/assets/img/themes/militaryBill/dividedMilitaryDistrictsno210.png' | relative_url }}" alt="Vicksburg Daily Times article about military districts">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/militaryBill/dividedMilitaryDistrictsno210.png' | relative_url }}" alt="Vicksburg Daily Times article about military districts">
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>Divided States of the South</h5>
@@ -130,7 +142,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="carousel-image-wrapper">
-        <img src="{{ '/assets/img/themes/suffrage/separatingVotes_VDT219.png' | relative_url }}" alt="VDT article about separating votes">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/suffrage/separatingVotes_VDT219.png' | relative_url }}" alt="VDT article about separating votes">
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>Separating Votes</h5>
@@ -139,7 +151,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
     </div>
     <div class="carousel-item">
       <div class="carousel-image-wrapper">
-        <img src="{{ '/assets/img/themes/suffrage/judgeRobb_VDT232.png' | relative_url }}" alt="VDT article about Judge Robb on African American Suffrage">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/suffrage/judgeRobb_VDT232.png' | relative_url }}" alt="VDT article about Judge Robb on African American Suffrage">
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>Judge Robb on African American Suffrage</h5>
@@ -148,7 +160,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
     </div>
     <div class="carousel-item">
       <div class="carousel-image-wrapper">
-        <img src="{{ '/assets/img/themes/suffrage/publidLibertyVDT241.png' | relative_url }}" alt="VDT article about public liberty">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/suffrage/publidLibertyVDT241.png' | relative_url }}" alt="VDT article about public liberty">
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>Public Liberty</h5>
@@ -157,7 +169,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
     </div>
     <div class="carousel-item">
       <div class="carousel-image-wrapper">
-        <img src="{{ '/assets/img/themes/suffrage/castTheRightVote_VDT236.png' | relative_url }}" alt="VDT article about casting the right vote">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/suffrage/castTheRightVote_VDT236.png' | relative_url }}" alt="VDT article about casting the right vote">
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>Cast the Right Vote</h5>
@@ -166,7 +178,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
     </div>
     <div class="carousel-item">
       <div class="carousel-image-wrapper">
-        <img src="{{ '/assets/img/themes/suffrage/whatOughtTheSouthToDo_VDT223.png' | relative_url }}" alt="VDT article about what ought the South to do">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/suffrage/whatOughtTheSouthToDo_VDT223.png' | relative_url }}" alt="VDT article about what ought the South to do">
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>What Ought the South to Do</h5>
@@ -182,6 +194,21 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div>
+
+<div class="modal fade themes-image-modal" id="themesImageModal" tabindex="-1" aria-labelledby="themesImageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="themesImageModalLabel">Image preview</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="" alt="" class="img-fluid rounded shadow" id="themesImageModalImage">
+        <p class="mt-3 mb-0 small text-white-50" id="themesImageModalCaption"></p>
+      </div>
+    </div>
+  </div>
 </div>
 
 ---
@@ -203,3 +230,40 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
 ## Research Notes
 
 Each of the three themes is represented by five carefully selected newspaper issues from the Vicksburg Daily Times. The selection criteria focused on issues containing significant coverage of each respective theme, ensuring that researchers can find substantial primary source material related to their area of interest. The thematic organization allows for both broad exploration of Reconstruction-era topics and focused investigation of specific historical narratives.
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof bootstrap === 'undefined') {
+      return;
+    }
+    var modalEl = document.getElementById('themesImageModal');
+    if (!modalEl) {
+      return;
+    }
+    var modalImage = document.getElementById('themesImageModalImage');
+    var modalTitle = document.getElementById('themesImageModalLabel');
+    var modalCaption = document.getElementById('themesImageModalCaption');
+    var carouselImages = document.querySelectorAll('.themes-carousel-image');
+    carouselImages.forEach(function (img) {
+      img.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var slide = img.closest('.carousel-item');
+        var captionTitle = slide ? slide.querySelector('.carousel-caption h5') : null;
+        var captionText = slide ? slide.querySelector('.carousel-caption p') : null;
+        modalImage.src = img.getAttribute('src');
+        modalImage.alt = img.getAttribute('alt') || '';
+        modalTitle.textContent = captionTitle ? captionTitle.textContent : (img.getAttribute('alt') || 'Image preview');
+        modalCaption.textContent = captionText ? captionText.textContent : '';
+        var modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl);
+        modalInstance.show();
+      });
+    });
+    modalEl.addEventListener('hidden.bs.modal', function () {
+      modalImage.src = '';
+      modalImage.alt = '';
+      modalTitle.textContent = 'Image preview';
+      modalCaption.textContent = '';
+    });
+  });
+</script>
