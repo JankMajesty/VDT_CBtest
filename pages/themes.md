@@ -77,6 +77,9 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
     <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -104,6 +107,42 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       <div class="carousel-caption d-none d-md-block">
         <h5>Divided States of the South</h5>
         <p>Map showing the South divided into military districts</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/militaryBill/vetoBill_VDT215.png' | relative_url }}" alt="VDT article about veto of the Military Bill">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Veto Bill</h5>
+        <p>President Johnson's veto of the Military Reconstruction Act</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/militaryBill/militaryInMobile_VDT216.png' | relative_url }}" alt="VDT article about military presence in Mobile">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Military in Mobile</h5>
+        <p>Federal military occupation in Southern cities</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/militaryBill/convention_VDT224.png' | relative_url }}" alt="VDT article about state constitutional conventions">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Convention</h5>
+        <p>State constitutional conventions under military supervision</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/militaryBill/noDelegation_VDT224.png' | relative_url }}" alt="VDT article about delegation to conventions">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>No Delegation</h5>
+        <p>Southern resistance to Reconstruction conventions</p>
       </div>
     </div>
   </div>
@@ -224,6 +263,71 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
 **Explore the newspapers:**
 
 <a href="{{ '/browse.html#Southern Lost Cause Mentality' | relative_url }}" class="btn btn-primary btn-lg mb-3">View Lost Cause Mentality Issues</a>
+
+<div id="lostCauseCarousel" class="carousel slide mb-4 themes-carousel" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#lostCauseCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#lostCauseCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#lostCauseCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#lostCauseCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#lostCauseCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/lostCause/gloifySouth_VDT213.png' | relative_url }}" alt="VDT article glorifying the South">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Glorify South</h5>
+        <p>Romanticizing the pre-war South and Confederate values</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/lostCause/disgracedSouthCarolina_VDT225.png' | relative_url }}" alt="VDT article about disgraced South Carolina">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Disgraced South Carolina</h5>
+        <p>Lamenting the loss of Southern political power</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/lostCause/stealOurRiches_VDT226.png' | relative_url }}" alt="VDT article about stealing Southern wealth">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Steal Our Riches</h5>
+        <p>Claims of Northern exploitation of Southern resources</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/lostCause/moreSoldiersMoreBayonets_VDT237.png' | relative_url }}" alt="VDT article about military occupation">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>More Soldiers, More Bayonets</h5>
+        <p>Opposition to continued federal military presence</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/lostCause/holdNoOffice_VDT238.png' | relative_url }}" alt="VDT article about former Confederates barred from office">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Hold No Office</h5>
+        <p>Protest against restrictions on former Confederate leaders</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#lostCauseCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#lostCauseCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 ---
 
