@@ -8,7 +8,7 @@ credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
 
-{% include feature/jumbotron.html objectid="/assets/img/theGeorgetownElection.jpg" alt="1867 Harper's Weekly political cartoon by Thomas Nast, depicting an African-American man casting his ballot during an election as Andrew Johnson and others look on angrily." padding="8em" caption='"The Georgetown Election--The Negro at the Ballot-Box", Thomas Nast, Harper\'s Weekly, March 16, 1867, Massachusetts Historical Society' %}
+{% include feature/jumbotron.html objectid="/assets/img/theGeorgetownElection.jpg" alt="1867 Harper's Weekly political cartoon by Thomas Nast, depicting an African-American man casting his ballot during an election as Andrew Johnson and others look on angrily." padding="8em" caption="<em>The Georgetown Election--The Negro at the Ballot-Box</em>, Thomas Nast, <em>Harper's Weekly</em>, March 16, 1867, Massachusetts Historical Society" %}
 
 {% include feature/nav-menu.html sections="About the Collection;Source Materials;Historical Context;Thematic Organization;About This Project" %}
 
@@ -33,6 +33,8 @@ This collection is organized around three key themes of Reconstruction: the Mili
 
 This digital collection was created by students of the Digital Libraries course at the University of Texas at Austin School of Information. The students received 40 digitized issues of The Vicksburg Daily Times and generated metadata for each issue. 15 of the 40 issues were carefully selected to present on this website according to the selected three key themes.
 
+{% include feature/image.html objectid="/assets/img/FreedmensBureauby-AlfredRWaud1868-700.png" width="75" caption="<em>The Freedmen's Bureau</em>, A.R. Waud, <em>Harper's Weekly</em>, July 1968, Library of Congress" %}
+
 ### OCR and AI Tools
 
 OCR tools (ABBYY FineReader) were used to generate text from the historic newspaper images. OCR generated text of historic newspapers is never 100% accurate due to the quality of the digitized image and the technology used.
@@ -54,4 +56,4 @@ AI tools (Claude Code Sonnet 4.5 and Haiku 4.5, Cursor, OpenAI Codex, GPT-5) wer
 - Gabe Mello
 - Vivian Myers
 
-{% include feature/image.html objectid="/assets/img/freedmenVotingNewOrleans_BettmanGetty.jpg" width="75" caption="Freedmen voting in New Orleans during Reconstruction, Bettmann/Getty Images" %}
+{% include feature/image.html objectid="/assets/img/freedmenVotingNewOrleansNYPL.jpg" width="75" caption="<em>Freedmen voting in New Orleans</em>, The Miriam and Ira D. Wallach Division of Art, Prints and Photographs: Picture Collection, The New York Public Library. The New York Public Library Digital Collections." %}
