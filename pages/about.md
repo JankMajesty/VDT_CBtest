@@ -53,3 +53,5 @@ AI tools (Claude Code Sonnet 4.5 and Haiku 4.5, Cursor, OpenAI Codex, GPT-5) wer
 - Lucas McGill
 - Gabe Mello
 - Vivian Myers
+
+{% include feature/image.html objectid="/assets/img/freedmenVotingNewOrleans_BettmanGetty.jpg" width="75" caption="Freedmen voting in New Orleans during Reconstruction, Bettmann/Getty Images" %}
