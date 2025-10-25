@@ -46,12 +46,44 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
     cursor: zoom-in;
   }
   .themes-carousel .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 10px;
     border-radius: 5px;
-    left: 10%;
-    right: 10%;
-    bottom: 20px;
+    left: 5%;
+    right: 5%;
+    bottom: 10px;
+  }
+  .themes-carousel .carousel-caption h5 {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  .themes-carousel .carousel-caption p {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .themes-carousel .carousel-caption .btn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  @media (min-width: 768px) {
+    .themes-carousel .carousel-caption {
+      padding: 15px;
+      left: 10%;
+      right: 10%;
+      bottom: 20px;
+    }
+    .themes-carousel .carousel-caption h5 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .themes-carousel .carousel-caption p {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .themes-carousel .carousel-caption .btn {
+      font-size: 0.875rem;
+      padding: 0.375rem 0.75rem;
+    }
   }
   .themes-carousel .carousel-control-prev-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 7l4.647 4.646a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
@@ -87,7 +119,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/ReconstructionAct1867.jpg' | relative_url }}" alt="Reconstruction Act of 1867 document">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Reconstruction Act of 1867</h5>
         <p>National Archives, RG 11, General Records of the U.S. Government</p>
       </div>
@@ -96,7 +128,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/militaryBill/terribleLaw_VDT222.png' | relative_url }}" alt="Vicksburg Daily Times article about the Military Bill">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Terrible Law</h5>
         <p>Editorial on the Military Reconstruction Act</p>
         <a href="{{ '/item.html?id=camh-dob-030018#camh-dob-030018_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -106,7 +138,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/militaryBill/dividedMilitaryDistrictsno210.png' | relative_url }}" alt="Vicksburg Daily Times article about military districts">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Five Military Districts</h5>
         <p>Southern states divided into military districts</p>
         <a href="{{ '/item.html?id=camh-dob-030006#camh-dob-030006_0001' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -116,7 +148,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/militaryBill/vetoBill_VDT215.png' | relative_url }}" alt="VDT article about veto of the Military Bill">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Veto Bill</h5>
         <p>President Johnson's veto of the Military Reconstruction Act</p>
         <a href="{{ '/item.html?id=camh-dob-030011#camh-dob-030011_0001' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -126,7 +158,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/militaryBill/militaryInMobile_VDT216.png' | relative_url }}" alt="VDT article about military presence in Mobile">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Military in Mobile</h5>
         <p>Federal military occupation in Southern cities</p>
         <a href="{{ '/item.html?id=camh-dob-030012#camh-dob-030012_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -136,7 +168,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/militaryBill/convention_VDT224.png' | relative_url }}" alt="VDT article about state constitutional conventions">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Convention</h5>
         <p>State constitutional conventions under military supervision</p>
         <a href="{{ '/item.html?id=camh-dob-030021#camh-dob-030021_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -146,7 +178,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/militaryBill/noDelegation_VDT224.png' | relative_url }}" alt="VDT article about delegation to conventions">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>No Delegation</h5>
         <p>General unable to delegate powers to Southern governors</p>
         <a href="{{ '/item.html?id=camh-dob-030021#camh-dob-030021_0001' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -190,7 +222,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/suffrage/separatingVotes_VDT219.png' | relative_url }}" alt="VDT article about separating votes">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Separating Votes</h5>
         <p>Telegraphic news from Alexandria on voter registration and segregation</p>
         <a href="{{ '/item.html?id=camh-dob-030015#camh-dob-030015_0001' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -200,7 +232,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/suffrage/judgeRobb_VDT232.png' | relative_url }}" alt="VDT article about Judge Robb on African American Suffrage">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Judge Robb on African American Suffrage</h5>
         <p>Legal perspectives on voting rights</p>
         <a href="{{ '/item.html?id=camh-dob-030029#camh-dob-030029_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -210,7 +242,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/suffrage/publidLibertyVDT241.png' | relative_url }}" alt="VDT article about public liberty">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Public Liberty</h5>
         <p>Southern perspectives on citizenship and voting</p>
         <a href="{{ '/item.html?id=camh-dob-030038#camh-dob-030038_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -220,7 +252,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/suffrage/castTheRightVote_VDT236.png' | relative_url }}" alt="VDT article about casting the right vote">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Cast the Right Vote</h5>
         <p>Political messaging around Reconstruction elections</p>
         <a href="{{ '/item.html?id=camh-dob-030033#camh-dob-030033_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -230,7 +262,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/suffrage/whatOughtTheSouthToDo_VDT223.png' | relative_url }}" alt="VDT article about what ought the South to do">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>What Ought the South to Do</h5>
         <p>Editorial on Southern response to voting rights</p>
         <a href="{{ '/item.html?id=camh-dob-030020#camh-dob-030020_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -289,7 +321,7 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/lostCause/gloifySouth_VDT213.png' | relative_url }}" alt="VDT article glorifying the South">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Woe and Destruction</h5>
         <p>Southern grievances regarding destruction inflicted by the North</p>
         <a href="{{ '/item.html?id=camh-dob-030009#camh-dob-030009_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -299,7 +331,7 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/lostCause/disgracedSouthCarolina_VDT225.png' | relative_url }}" alt="VDT article about disgraced South Carolina">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Disgraced South Carolina</h5>
         <p>Lamenting the loss of Southern political power</p>
         <a href="{{ '/item.html?id=camh-dob-030022#camh-dob-030022_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -309,7 +341,7 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/lostCause/stealOurRiches_VDT226.png' | relative_url }}" alt="VDT article about stealing Southern wealth">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Stealing Our Riches</h5>
         <p>Southern perception that the North is exploiting their resources</p>
         <a href="{{ '/item.html?id=camh-dob-030023#camh-dob-030023_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -319,7 +351,7 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/lostCause/moreSoldiersMoreBayonets_VDT237.png' | relative_url }}" alt="VDT article about military occupation">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>More Soldiers, More Bayonets</h5>
         <p>Southern opposition to federal military presence</p>
         <a href="{{ '/item.html?id=camh-dob-030034#camh-dob-030034_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
@@ -329,7 +361,7 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
       <div class="carousel-image-wrapper">
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/lostCause/holdNoOffice_VDT238.png' | relative_url }}" alt="VDT article about former Confederates barred from office">
       </div>
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Hold No Office</h5>
         <p>Southern grievances toward restrictions on Confederate veterans</p>
         <a href="{{ '/item.html?id=camh-dob-030035#camh-dob-030035_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
