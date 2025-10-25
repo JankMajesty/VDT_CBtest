@@ -220,12 +220,12 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="carousel-image-wrapper">
-        <img class="themes-carousel-image" src="{{ '/assets/img/themes/suffrage/separatingVotes_VDT219.png' | relative_url }}" alt="VDT article about separating votes">
+        <img class="themes-carousel-image" src="{{ '/assets/img/themes/suffrage/suffrageForReaders.jpg' | relative_url }}" alt="VDT article snippet about suffrage for those who can read the constitution">
       </div>
       <div class="carousel-caption">
-        <h5>Separating Votes</h5>
-        <p>Telegraphic news from Alexandria on voter registration and segregation</p>
-        <a href="{{ '/item.html?id=camh-dob-030015#camh-dob-030015_0001' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
+        <h5>Suffrage for Readers</h5>
+        <p>Editorial about suffrage for African Americans who can read the constitution</p>
+        <a href="{{ '/item.html?id=camh-dob-030003#camh-dob-030003_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
     <div class="carousel-item">
