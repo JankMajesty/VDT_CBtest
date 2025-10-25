@@ -80,6 +80,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
     <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
     <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
     <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -98,6 +99,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       <div class="carousel-caption d-none d-md-block">
         <h5>Terrible Law</h5>
         <p>Editorial on the Military Reconstruction Act</p>
+        <a href="{{ '/item.html?id=camh-dob-030018#camh-dob-030018_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -107,6 +109,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       <div class="carousel-caption d-none d-md-block">
         <h5>Five Military Districts</h5>
         <p>Southern states divided into military districts</p>
+        <a href="{{ '/item.html?id=camh-dob-030006#camh-dob-030006_0001' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -116,6 +119,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       <div class="carousel-caption d-none d-md-block">
         <h5>Veto Bill</h5>
         <p>President Johnson's veto of the Military Reconstruction Act</p>
+        <a href="{{ '/item.html?id=camh-dob-030011#camh-dob-030011_0001' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -125,6 +129,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       <div class="carousel-caption d-none d-md-block">
         <h5>Military in Mobile</h5>
         <p>Federal military occupation in Southern cities</p>
+        <a href="{{ '/item.html?id=camh-dob-030012#camh-dob-030012_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -134,6 +139,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       <div class="carousel-caption d-none d-md-block">
         <h5>Convention</h5>
         <p>State constitutional conventions under military supervision</p>
+        <a href="{{ '/item.html?id=camh-dob-030021#camh-dob-030021_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -143,6 +149,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       <div class="carousel-caption d-none d-md-block">
         <h5>No Delegation</h5>
         <p>General unable to delegate powers to Southern governors</p>
+        <a href="{{ '/item.html?id=camh-dob-030021#camh-dob-030021_0001' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
   </div>
@@ -185,7 +192,8 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>Separating Votes</h5>
-        <p>Editorial on voter registration and segregation</p>
+        <p>Telegraphic news from Alexandria on voter registration and segregation</p>
+        <a href="{{ '/item.html?id=camh-dob-030015#camh-dob-030015_0001' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -195,6 +203,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
       <div class="carousel-caption d-none d-md-block">
         <h5>Judge Robb on African American Suffrage</h5>
         <p>Legal perspectives on voting rights</p>
+        <a href="{{ '/item.html?id=camh-dob-030029#camh-dob-030029_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -204,6 +213,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
       <div class="carousel-caption d-none d-md-block">
         <h5>Public Liberty</h5>
         <p>Southern perspectives on citizenship and voting</p>
+        <a href="{{ '/item.html?id=camh-dob-030038#camh-dob-030038_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -213,6 +223,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
       <div class="carousel-caption d-none d-md-block">
         <h5>Cast the Right Vote</h5>
         <p>Political messaging around Reconstruction elections</p>
+        <a href="{{ '/item.html?id=camh-dob-030033#camh-dob-030033_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -222,6 +233,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
       <div class="carousel-caption d-none d-md-block">
         <h5>What Ought the South to Do</h5>
         <p>Editorial on Southern response to voting rights</p>
+        <a href="{{ '/item.html?id=camh-dob-030020#camh-dob-030020_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
   </div>
@@ -279,7 +291,8 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>Woe and Destruction</h5>
-        <p>Romanticizing the pre-war South and Confederate values</p>
+        <p>Southern grievances regarding destruction inflicted by the North</p>
+        <a href="{{ '/item.html?id=camh-dob-030009#camh-dob-030009_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -289,6 +302,7 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
       <div class="carousel-caption d-none d-md-block">
         <h5>Disgraced South Carolina</h5>
         <p>Lamenting the loss of Southern political power</p>
+        <a href="{{ '/item.html?id=camh-dob-030022#camh-dob-030022_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -297,7 +311,8 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>Stealing Our Riches</h5>
-        <p>Southern grievances toward restrictions on Confederate veterans</p>
+        <p>Southern perception that the North is exploiting their resources</p>
+        <a href="{{ '/item.html?id=camh-dob-030023#camh-dob-030023_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -307,6 +322,7 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
       <div class="carousel-caption d-none d-md-block">
         <h5>More Soldiers, More Bayonets</h5>
         <p>Southern opposition to federal military presence</p>
+        <a href="{{ '/item.html?id=camh-dob-030034#camh-dob-030034_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -315,7 +331,8 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>Hold No Office</h5>
-        <p>Protest against restrictions on former Confederate leaders</p>
+        <p>Southern grievances toward restrictions on Confederate veterans</p>
+        <a href="{{ '/item.html?id=camh-dob-030035#camh-dob-030035_0002' | relative_url }}" class="btn btn-sm btn-light mt-2">View Full Page →</a>
       </div>
     </div>
   </div>
@@ -340,6 +357,17 @@ Each of the three themes is represented by five carefully selected newspaper iss
     if (typeof bootstrap === 'undefined') {
       return;
     }
+
+    // Initialize all carousels explicitly
+    var carouselElements = document.querySelectorAll('.themes-carousel');
+    carouselElements.forEach(function (carouselEl) {
+      new bootstrap.Carousel(carouselEl, {
+        interval: 5000,
+        ride: 'carousel',
+        wrap: true
+      });
+    });
+
     var modalEl = document.getElementById('themesImageModal');
     if (!modalEl) {
       return;
