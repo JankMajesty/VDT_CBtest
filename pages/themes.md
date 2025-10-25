@@ -96,8 +96,8 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/militaryBill/terribleLaw_VDT222.png' | relative_url }}" alt="Vicksburg Daily Times article about the Military Bill">
       </div>
       <div class="carousel-caption d-none d-md-block">
-        <h5>VDT Editorial on the 'Terrible Law'</h5>
-        <p>Vicksburg Daily Times commentary on the Military Reconstruction Act</p>
+        <h5>Terrible Law</h5>
+        <p>Editorial on the Military Reconstruction Act</p>
       </div>
     </div>
     <div class="carousel-item">
@@ -105,8 +105,8 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/militaryBill/dividedMilitaryDistrictsno210.png' | relative_url }}" alt="Vicksburg Daily Times article about military districts">
       </div>
       <div class="carousel-caption d-none d-md-block">
-        <h5>Divided States of the South</h5>
-        <p>Map showing the South divided into military districts</p>
+        <h5>Five Military Districts</h5>
+        <p>Southern states divided into military districts</p>
       </div>
     </div>
     <div class="carousel-item">
@@ -142,7 +142,7 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>No Delegation</h5>
-        <p>Southern resistance to Reconstruction conventions</p>
+        <p>General unable to delegate powers to Southern governors</p>
       </div>
     </div>
   </div>
@@ -185,7 +185,7 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>Separating Votes</h5>
-        <p>VDT commentary on voter registration and segregation</p>
+        <p>Editorial on voter registration and segregation</p>
       </div>
     </div>
     <div class="carousel-item">
@@ -278,7 +278,7 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/lostCause/gloifySouth_VDT213.png' | relative_url }}" alt="VDT article glorifying the South">
       </div>
       <div class="carousel-caption d-none d-md-block">
-        <h5>Glorify South</h5>
+        <h5>Woe and Destruction</h5>
         <p>Romanticizing the pre-war South and Confederate values</p>
       </div>
     </div>
@@ -296,8 +296,8 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
         <img class="themes-carousel-image" src="{{ '/assets/img/themes/lostCause/stealOurRiches_VDT226.png' | relative_url }}" alt="VDT article about stealing Southern wealth">
       </div>
       <div class="carousel-caption d-none d-md-block">
-        <h5>Steal Our Riches</h5>
-        <p>Claims of Northern exploitation of Southern resources</p>
+        <h5>Stealing Our Riches</h5>
+        <p>Southern grievances toward restrictions on Confederate veterans</p>
       </div>
     </div>
     <div class="carousel-item">
@@ -306,7 +306,7 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>More Soldiers, More Bayonets</h5>
-        <p>Opposition to continued federal military presence</p>
+        <p>Southern opposition to federal military presence</p>
       </div>
     </div>
     <div class="carousel-item">
