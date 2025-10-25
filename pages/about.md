@@ -33,7 +33,7 @@ This collection is organized around three key themes of Reconstruction: the Mili
 
 This digital collection was created by students of the Digital Libraries course at the University of Texas at Austin School of Information. The students received 40 digitized issues of The Vicksburg Daily Times and generated metadata for each issue. 15 of the 40 issues were carefully selected to present on this website according to the selected three key themes.
 
-{% include feature/image.html objectid="/assets/img/FreedmensBureauby-AlfredRWaud1868-700.png" width="75" caption="<em>The Freedmen's Bureau</em>, A.R. Waud, <em>Harper's Weekly</em>, July 1968, Library of Congress" %}
+{% include feature/image.html objectid="/assets/img/FreedmensBureauHarpersSmithsonian.jpg" width="75" alt="Harper's Weekly illustration depicting a uniformed figure representing the Freedmen's Bureau at center holding out his hand to stop a group of white men from advancing on a group of Black men, with both groups holding weapons and a United States flag hanging from a building in the background" caption="<em>The Freedmen's Bureau</em>, A.R. Waud, <em>Harper's Weekly</em>, July 1968, Collection of the Smithsonian National Museum of African American History and Culture, Stanley Turkel's Collection of Reconstruction Era Materials" %}
 
 ### OCR and AI Tools
 
@@ -56,4 +56,4 @@ AI tools (Claude Code Sonnet 4.5 and Haiku 4.5, Cursor, OpenAI Codex, GPT-5) wer
 - Gabe Mello
 - Vivian Myers
 
-{% include feature/image.html objectid="/assets/img/freedmenVotingNewOrleansNYPL.jpg" width="75" caption="<em>Freedmen voting in New Orleans</em>, The Miriam and Ira D. Wallach Division of Art, Prints and Photographs: Picture Collection, The New York Public Library. The New York Public Library Digital Collections." %}
+{% include feature/image.html objectid="/assets/img/freedmenVotingNewOrleansNYPL.jpg" width="75" alt="Historical illustration showing African American men voting in New Orleans during Reconstruction, with voters lined up at a ballot box" caption="<em>Freedmen voting in New Orleans</em>, The Miriam and Ira D. Wallach Division of Art, Prints and Photographs: Picture Collection, The New York Public Library. The New York Public Library Digital Collections." %}
