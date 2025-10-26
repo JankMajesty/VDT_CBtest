@@ -1,3 +1,4 @@
+# .github/workflows/mirror-to-shared.yml
 name: Mirror to shared
 on:
   push:
@@ -5,6 +6,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+
 jobs:
   mirror:
     runs-on: ubuntu-latest
@@ -14,10 +16,14 @@ jobs:
       - name: Push --mirror to shared
         env:
           TOKEN: ${{ secrets.SHARED_PUSH_TOKEN }}
-          TARGET: github.com/VDT-UTiSchool/vdt_cb.git
         run: |
+          set -e
           git config --global user.name "mirror-bot"
           git config --global user.email "mirror@example.com"
-          git remote add shared https://$TOKEN@$TARGET
+          # nuke any existing remote that doesn't have the token baked in
+          git remote rm shared || true
+          # include the SHARED USERNAME so creds are cached separately from yours
+          git remote add shared https://VDT-UTiSchool:${TOKEN}@github.com/VDT-UTiSchool/vdt_cb.git
+          # (optional) quick sanity: print remotes with token redacted
+          git remote -v | sed -e 's/https:\/\/[^@]*@/https:\/\/***@/'
           git push --mirror shared --quiet
-
