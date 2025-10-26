@@ -1,9 +1,9 @@
-# .github/workflows/mirror-to-shared.yml
 name: Mirror to shared
 on:
   push:
-    branches: [ main ]
+    branches: [ main ]    # change if your default branch differs
   workflow_dispatch:
+
 permissions:
   contents: read
 
@@ -11,19 +11,37 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
+      # Don't persist GITHUB_TOKEN as a Git credential
       - uses: actions/checkout@v4
-        with: { fetch-depth: 0 }
-      - name: Push --mirror to shared
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      # Sanity check: make sure the secret is present (won't print its value)
+      - name: Sanity check token
+        env:
+          TOKEN: ${{ secrets.SHARED_PUSH_TOKEN }}
+        run: |
+          if [ -z "${TOKEN:-}" ]; then
+            echo "::error:: SHARED_PUSH_TOKEN is missing or empty"
+            exit 1
+          fi
+          echo "Token present ✔"
+
+      - name: Mirror push to shared
         env:
           TOKEN: ${{ secrets.SHARED_PUSH_TOKEN }}
         run: |
           set -e
           git config --global user.name "mirror-bot"
           git config --global user.email "mirror@example.com"
-          # nuke any existing remote that doesn't have the token baked in
+
+          # Recreate the remote each run with username+token baked in
           git remote rm shared || true
-          # include the SHARED USERNAME so creds are cached separately from yours
           git remote add shared https://VDT-UTiSchool:${TOKEN}@github.com/VDT-UTiSchool/vdt_cb.git
-          # (optional) quick sanity: print remotes with token redacted
-          git remote -v | sed -e 's/https:\/\/[^@]*@/https:\/\/***@/'
+
+          # Quick connectivity probe (exits nonzero if token/URL is wrong)
+          git ls-remote https://VDT-UTiSchool:${TOKEN}@github.com/VDT-UTiSchool/vdt_cb.git >/dev/null
+
+          # Push everything; if you use protected branches, see alt push below
           git push --mirror shared --quiet
