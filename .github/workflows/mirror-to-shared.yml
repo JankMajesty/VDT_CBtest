@@ -1,0 +1,23 @@
+name: Mirror to shared
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Push --mirror to shared
+        env:
+          TOKEN: ${{ secrets.SHARED_PUSH_TOKEN }}
+          TARGET: github.com/VDT-UTiSchool/vdt_cb.git
+        run: |
+          git config --global user.name "mirror-bot"
+          git config --global user.email "mirror@example.com"
+          git remote add shared https://$TOKEN@$TARGET
+          git push --mirror shared --quiet
+
