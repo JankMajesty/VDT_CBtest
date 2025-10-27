@@ -6,7 +6,7 @@ This site is built using [CollectionBuilder-GH](https://collectionbuilder.github
 
 ## About This Project
 
-This digital collection was created as part of a Digital Libraries class project, working with historical newspaper materials from the Briscoe American History Center at the University of Texas at Austin.
+This digital collection was created as part of a Digital Libraries class project, working with historical newspaper materials from the Briscoe American History Center at the University of Texas at Austin. Link to GitHub pages site can be found [here](https://vdt-utischool.github.io/vdt_cb/).
 
 For information about the CollectionBuilder template used to create this site, visit the [CollectionBuilder Docs](https://collectionbuilder.github.io/cb-docs/).
 
