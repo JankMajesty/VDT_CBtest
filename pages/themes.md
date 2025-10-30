@@ -210,7 +210,7 @@ The Vicksburg Daily Times newspapers highlight the negative Southern response to
       </div>
       <div class="carousel-caption">
         <h5>General Robert E. Lee</h5>
-        <p>General Robert E. Lee encouraged many Confederate soldiers to stop fighting after his surrender. Despite being stripped of his right to vote, his personal property, and even his family home as a result of the Military Bill, Lee still supported Reconstruction policies.</p>
+        <p>General Robert E. Lee supported Reconstruction policies, despite being stripped of his property, family home, and of his right to vote.</p>
       </div>
     </div>
     <div class="carousel-item">
@@ -219,7 +219,7 @@ The Vicksburg Daily Times newspapers highlight the negative Southern response to
       </div>
       <div class="carousel-caption">
         <h5>General P.G.T. Beauregard</h5>
-        <p>General P.G.T Beauregard was urged by both Robert E. Lee and President Johnson to swear an oath of loyalty to the new nation and was later pardoned by the President. He opposed many Reconstruction policies, as well as the political autonomy of former slaves.</p>
+        <p>Despite swearing an oath to the new nation and receiving a pardon from the President, General P.G.T Beauregard opposed many Reconstruction policies, as well as the political autonomy of former slaves.</p>
       </div>
     </div>
   </div>
@@ -445,7 +445,7 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
       </div>
       <div class="carousel-caption">
         <h5>General Thomas "Stonewall" Jackson</h5>
-        <p>General Thomas "Stonewall" Jackson was Robert E. Lee's right hand during the war, and his death in 1863 was a great loss for the Confederates. Due to his renown as a tactician, he was idolized and commemorated across the South as a lost hero through song, statues, postage, etc.</p>
+        <p>General Thomas “Stonewall” Jackson Due was idolized and commemorated across the South as a lost hero after his death in 1863 due to his renown as a tactician.</p>
       </div>
     </div>
     <div class="carousel-item">
@@ -454,7 +454,7 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
       </div>
       <div class="carousel-caption">
         <h5>Brigadier General Felix Kirk Zollicoffer</h5>
-        <p>Brig. Gen. Felix Kirk Zollicoffer was one of the first Confederate officers to die in the Western theater of the Civil War in 1862, and he was commemorated by the South with a park in his name, located in Kentucky.</p>
+        <p>Brig. Gen. Felix Kirk Zollicoffer was commemorated by the South after his death in 1862 with Zollicoffer Park in Kentucky.</p>
       </div>
     </div>
     <div class="carousel-item">
