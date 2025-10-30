@@ -255,6 +255,9 @@ Through many scathing editorials, news reports, and reprinted speeches, The Vick
     <button type="button" data-bs-target="#suffrageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     <button type="button" data-bs-target="#suffrageCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
     <button type="button" data-bs-target="#suffrageCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <button type="button" data-bs-target="#suffrageCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    <button type="button" data-bs-target="#suffrageCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+    <button type="button" data-bs-target="#suffrageCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -305,6 +308,33 @@ Through many scathing editorials, news reports, and reprinted speeches, The Vick
         <h5>What Ought the South to Do</h5>
         <p>Editorial on Southern response to voting rights</p>
         <a href="{{ '/item.html?id=camh-dob-030020#camh-dob-030020_0002' | relative_url }}" class="btn btn-sm btn-primary mt-2">View Full Page →</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/theGeorgetownElection.jpg' | relative_url }}" alt="1867 Harper's Weekly political cartoon by Thomas Nast, depicting an African-American man casting his ballot during an election as Andrew Johnson and others look on angrily.">
+      </div>
+      <div class="carousel-caption">
+        <h5>The Georgetown Election--The Negro at the Ballot-Box</h5>
+        <p>Thomas Nast, Harper's Weekly, March 16, 1867, Massachusetts Historical Society</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/freedmensBureauHarpersSmithsonian.jpg' | relative_url }}" alt="Harper's Weekly illustration depicting a uniformed figure representing the Freedmen's Bureau at center holding out his hand to stop a group of white men from advancing on a group of Black men, with both groups holding weapons and a United States flag hanging from a building in the background">
+      </div>
+      <div class="carousel-caption">
+        <h5>The Freedmen's Bureau</h5>
+        <p>A.R. Waud, Harper's Weekly, July 1968, Collection of the Smithsonian National Museum of African American History and Culture, Stanley Turkel's Collection of Reconstruction Era Materials</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/freedmenVotingNeworleansNYPL.jpg' | relative_url }}" alt="Historical illustration showing African American men voting in New Orleans during Reconstruction, with voters lined up at a ballot box">
+      </div>
+      <div class="carousel-caption">
+        <h5>Freedmen voting in New Orleans</h5>
+        <p>The Miriam and Ira D. Wallach Division of Art, Prints and Photographs: Picture Collection, The New York Public Library. The New York Public Library Digital Collections.</p>
       </div>
     </div>
   </div>
