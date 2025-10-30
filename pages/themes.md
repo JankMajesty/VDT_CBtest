@@ -14,9 +14,10 @@ This collection highlights fifteen newspaper issues from the Vicksburg Daily Tim
 
 ## Military Reconstruction Act (1867)
 
-One of the most common items listed in the Vicksburg Daily Times newspapers as a cause for grievance is the Military Reconstruction Act of 1867 (Military Bill). This was the first of the Reconstruction Acts being passed through Congress after the Civil War, and required the southern states to write new constitutions and for the citizens of those states - including African Americans - to vote on the new constitution. Additionally, southern states were required to ratify the Fourteenth Amendment to the American Constitution into law. 
+The Military Reconstruction Act of 1867 (Military Bill) was a common cause for protest in The Vicksburg Daily Times newspapers. This was the first of the Reconstruction Acts being passed through Congress after the Civil War, and required the Southern states to write new constitutions and for the citizens of those states - including African Americans - to vote on the new constitution. Additionally, Southern states were required to ratify the Fourteenth Amendment to the American Constitution into law. 
 
-The Vicksburg Daily Times Newspapers highlight the negative southern response to the passing of this bill through many editorials, news reports and reprinted speeches in its effort to elucidate and persuade public opinion against this bill. The volumes curated in this website reveal a consistent narrative against the reintegration of southern states into the Union and also fear of the African American vote. 
+The Vicksburg Daily Times newspapers highlight the negative Southern response to the passing of this bill through many editorials, news reports and reprinted speeches in its effort to elucidate and persuade public opinion against this bill. The volumes curated in this website reveal a consistent narrative against the reintegration of Southern states into the Union and also fear of the African American vote. 
+
 
 **Explore the newspapers:**
 
@@ -207,9 +208,10 @@ The Vicksburg Daily Times Newspapers highlight the negative southern response to
 ## African American Suffrage
 
 
-One of the most common grievances throughout the Vicksburg Daily Times regarded the federal government’s push for nationwide African American suffrage. In the post-Civil War American South, the emancipation of the formerly enslaved was not viewed as progress but instead seen as a punishment given by the victorious North to destroy the South’s white-dominated social and political structure. 
+One of the most common grievances throughout The Vicksburg Daily Times regarded the federal government’s push for nationwide African American suffrage. In the post-Civil War American South, the emancipation of the formerly enslaved was not viewed as progress but instead seen as a punishment given by the victorious North to destroy the South’s white-dominated social and political structure. 
 
-Through many scathing editorials, news reports, and reprinted speeches, the Vicksburg Daily Times echoes the sentiment of suffrage as punishment in its efforts to shape the public opinion against this radical Republican policy. The articles curated in this website reveal a constant overarching narrative that questioned the integration of Black men and women into society and spread fear of the end of traditional Southern values. As you explore these articles, you will see how the Vicksburg Daily Times used its platform to strongly oppose suffrage, framing it as one of the worst injustices committed against the white citizens of the defeated South.
+Through many scathing editorials, news reports, and reprinted speeches, The Vicksburg Daily Times echoes the sentiment of suffrage as punishment in its efforts to shape the public opinion against this radical Republican policy. The articles curated in this website reveal a constant overarching narrative that questioned the integration of Black men and women into society and spread fear of the end of traditional Southern values. As you explore these articles, you will see how The Vicksburg Daily Times used its platform to strongly oppose suffrage, framing it as one of the worst injustices committed against the white citizens of the defeated South.
+
 
 
 **Explore the newspapers:**
@@ -306,9 +308,10 @@ Through many scathing editorials, news reports, and reprinted speeches, the Vick
 ## Southern Lost Cause Mentality
 
 
-One recurring theme in the Vicksburg Daily Times is the Southern Lost Cause Mentality. Originating from Edward Pollard’s 1866 book titled “The Lost Cause: A New Southern History of the War of the Confederates,” the term “lost cause” refers to the Southern belief that the Confederacy’s cause was not centered on slavery and was heroic in its ideals. Proponents of the “lost cause” mentality chose to revere these ideals in the Post-War era and emphasize the federal government’s oppression of the Southern states. 
+The theme of the Southern Lost Cause Mentality is recurrent throughout The Vicksburg Daily Times. Originating from Edward Pollard’s 1866 book titled “The Lost Cause: A New Southern History of the War of the Confederates,” the term “Lost Cause” refers to the Southern belief that the Confederacy’s cause was not centered on slavery and was heroic in its ideals. Proponents of the Lost Cause mentality chose to revere these ideals in the Post-War era and emphasize the federal government’s oppression of the Southern states. 
 
-This is evident in the outrage commonly depicted in articles and opinion pieces of the Vicksburg Daily Times over the military occupation of the South, and the treatment of former Confederate military members and the restriction of their rights, particularly their rights to hold public office.
+This is evident in the outrage commonly depicted in articles and opinion pieces of The Vicksburg Daily Times over the military occupation of the South, and the treatment of former Confederate military members and the restriction of their rights, particularly their rights to hold public office.
+
 
 
 **Explore the newspapers:**
