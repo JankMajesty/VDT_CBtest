@@ -20,8 +20,6 @@ The Vicksburg Daily Times Digital Library showcases digitized newspaper issues c
 
 The Vicksburg Daily Times came to the [Dolph Briscoe American Center for American History](https://briscoecenter.org/) through the acquisition of the [Natchez Trace Collection](https://briscoecenter.org/collections/american-south/). The collection was initially funded by wealthy Confederate veteran George W. Littlefield, who incidentally was an adherent to the Southern Lost Cause mentality expressed in this library’s materials. The original purpose of the collection – which was to effectively whitewash Southern history – has significantly changed since its inception. This digital library aims to honestly reckon with the violent legacy of Mississippi through its interpretation of the collection, motivated by a desire to assist humanities researchers analyzing the postwar South. 
 
-{% include feature/image.html objectid="/assets/img/briscoe/RiverBoat_RobertELee.jpg" width="75" alt="Photograph of the river steamboat Robert E Lee in the water. Steam is rising from the chimneys on the boat and blowing in the wind. An American flag is waving on the top right corner." caption="<em>Riverboat Robert E. Lee</em>, image scanned at the Dolph Briscoe Center for American History reading room." %}
-
 
 ### Historical Context
 
