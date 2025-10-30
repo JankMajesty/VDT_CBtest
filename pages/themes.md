@@ -121,6 +121,9 @@ The Vicksburg Daily Times newspapers highlight the negative Southern response to
     <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
     <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
     <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+    <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+    <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+    <button type="button" data-bs-target="#militaryBillCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -190,6 +193,33 @@ The Vicksburg Daily Times newspapers highlight the negative Southern response to
         <h5>No Delegation</h5>
         <p>General unable to delegate powers to Southern governors</p>
         <a href="{{ '/item.html?id=camh-dob-030021#camh-dob-030021_0001' | relative_url }}" class="btn btn-sm btn-primary mt-2">View Full Page →</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/briscoe/GeneralSheridan.jpg' | relative_url }}" alt="Caricature-style drawn cartoon of General Philip H. Sheridan in his uniform riding a toy horse with his left fist in the air. His name is written at the bottom of the image in cursive.">
+      </div>
+      <div class="carousel-caption">
+        <h5>General Philip H. Sheridan</h5>
+        <p>This caricature of General Philip H. Sheridan riding a toy hobby horse demonstrates the Southern contempt for Union army forces who enforced the Military Bill.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/briscoe/RobertELee.jpg' | relative_url }}" alt="Portrait of the bust of General Robert E Lee in military uniform facing the camera.">
+      </div>
+      <div class="carousel-caption">
+        <h5>General Robert E. Lee</h5>
+        <p>General Robert E. Lee encouraged many Confederate soldiers to stop fighting after his surrender. Despite being stripped of his right to vote, his personal property, and even his family home as a result of the Military Bill, Lee still supported Reconstruction policies.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/briscoe/GTBeauregard.jpg' | relative_url }}" alt="Portrait of the bust of GT Beauregard in military uniform facing the camera.">
+      </div>
+      <div class="carousel-caption">
+        <h5>General P.G.T. Beauregard</h5>
+        <p>General P.G.T Beauregard was urged by both Robert E. Lee and President Johnson to swear an oath of loyalty to the new nation and was later pardoned by the President. He opposed many Reconstruction policies, as well as the political autonomy of former slaves.</p>
       </div>
     </div>
   </div>
@@ -308,10 +338,9 @@ Through many scathing editorials, news reports, and reprinted speeches, The Vick
 ## Southern Lost Cause Mentality
 
 
-The theme of the Southern Lost Cause Mentality is recurrent throughout The Vicksburg Daily Times. Originating from Edward Pollard’s 1866 book titled “The Lost Cause: A New Southern History of the War of the Confederates,” the term “Lost Cause” refers to the Southern belief that the Confederacy’s cause was not centered on slavery and was heroic in its ideals. Proponents of the Lost Cause mentality chose to revere these ideals in the Post-War era and emphasize the federal government’s oppression of the Southern states. 
+The theme of the Southern Lost Cause Mentality is recurrent throughout The Vicksburg Daily Times. Originating from Edward Pollard’s 1866 book titled *The Lost Cause: A New Southern History of the War of the Confederates*, the term “Lost Cause” refers to the Southern belief that the Confederacy’s cause was not centered on slavery and was heroic in its ideals. , but rather was heroic in its ideals to uphold states’ rights and defend Southern freedom. Proponents of the Lost Cause mentality chose to revere these ideals in the postwar era and emphasize the federal government’s oppression of the Southern states. 
 
 This is evident in the outrage commonly depicted in articles and opinion pieces of The Vicksburg Daily Times over the military occupation of the South, and the treatment of former Confederate military members and the restriction of their rights, particularly their rights to hold public office.
-
 
 
 **Explore the newspapers:**
@@ -325,6 +354,9 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
     <button type="button" data-bs-target="#lostCauseCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     <button type="button" data-bs-target="#lostCauseCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
     <button type="button" data-bs-target="#lostCauseCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <button type="button" data-bs-target="#lostCauseCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    <button type="button" data-bs-target="#lostCauseCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+    <button type="button" data-bs-target="#lostCauseCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -375,6 +407,33 @@ This is evident in the outrage commonly depicted in articles and opinion pieces 
         <h5>Hold No Office</h5>
         <p>Southern grievances toward restrictions on Confederate veterans</p>
         <a href="{{ '/item.html?id=camh-dob-030035#camh-dob-030035_0002' | relative_url }}" class="btn btn-sm btn-primary mt-2">View Full Page →</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/briscoe/ThomasStonewallJackson.jpg' | relative_url }}" alt="Portrait of the bust of Thomas 'Stonewall' Jackson in military uniform facing left of the viewer.">
+      </div>
+      <div class="carousel-caption">
+        <h5>General Thomas "Stonewall" Jackson</h5>
+        <p>General Thomas "Stonewall" Jackson was Robert E. Lee's right hand during the war, and his death in 1863 was a great loss for the Confederates. Due to his renown as a tactician, he was idolized and commemorated across the South as a lost hero through song, statues, postage, etc.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/briscoe/FelixKirkZollicoffer.jpg' | relative_url }}" alt="Portrait of  Felix Kirk Zollicoffer standing facing the camera with his left hand resting on a table. His right hand is holding his uniform hat. His name is written at the bottom of the image in cursive.">
+      </div>
+      <div class="carousel-caption">
+        <h5>Brigadier General Felix Kirk Zollicoffer</h5>
+        <p>Brig. Gen. Felix Kirk Zollicoffer was one of the first Confederate officers to die in the Western theater of the Civil War in 1862, and he was commemorated by the South with a park in his name, located in Kentucky.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-image-wrapper">
+        <img class="themes-carousel-image" src="{{ '/assets/img/briscoe/GeneralThomasLRosser.jpg' | relative_url }}" alt="Portrait of the bust of General Thomas L Rosser in military uniform facing the camera. His name is written at the bottom of the image in cursive.">
+      </div>
+      <div class="carousel-caption">
+        <h5>General Thomas L. Rosser</h5>
+        <p>General Thomas L. Rosser worked avidly to honor fallen Confederate officers through monuments, despite explicit discouragement from Robert E. Lee.</p>
       </div>
     </div>
   </div>
